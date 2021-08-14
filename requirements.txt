@@ -1,0 +1,2 @@
+# requirements.txt    
+-r becoming_a_django_entdev/becoming_a_django_entdev/requirements.txt

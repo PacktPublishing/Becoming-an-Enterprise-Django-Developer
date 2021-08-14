@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "becoming_a_django_entdev", "becoming_a_django_entdev\becoming_a_django_entdev.pyproj", "{F5DA6333-34C1-4E42-ADC1-9A240B16FFBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5DA6333-34C1-4E42-ADC1-9A240B16FFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DA6333-34C1-4E42-ADC1-9A240B16FFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DA6333-34C1-4E42-ADC1-9A240B16FFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DA6333-34C1-4E42-ADC1-9A240B16FFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5111BDF-C42B-43E5-860F-A13A837699B8}
+	EndGlobalSection
+EndGlobal

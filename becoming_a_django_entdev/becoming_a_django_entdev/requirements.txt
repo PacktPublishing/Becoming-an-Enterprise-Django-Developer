@@ -1,0 +1,10 @@
+django~=2.2
+django-extensions
+django-heroku
+dj-database-url
+gunicorn
+psycopg2
+pydotplus
+python-dotenv
+whitenoise
+psycopg2-binary==2.8.6
