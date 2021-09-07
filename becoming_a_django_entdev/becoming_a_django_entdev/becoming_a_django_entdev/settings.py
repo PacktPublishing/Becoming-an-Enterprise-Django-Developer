@@ -32,6 +32,10 @@ SECRET_KEY = 'e8a4a113-8637-41f4-be33-5c707fc9b3fc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
@@ -44,9 +48,9 @@ ALLOWED_HOSTS = [
     'pure-atoll-19670.herokuapp.com',
 ]
 
-# Application references
+# Application References
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
-INSTALLED_APPS = [
+DJANGO_APPS = [
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,10 +58,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+THIRD_PARTY_APPS = [
     'django_extensions',
+    'address',
+    'djmoney',
+    'phone_field',
+]
+
+LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_1',
     'becoming_a_django_entdev.chapter_2',
+    'becoming_a_django_entdev.chapter_3',
 ]
+
+#### MERGE ALL APPS ####
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
@@ -107,6 +124,9 @@ DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
 
+# Django 3.2 Default Auto ID (Primary Key Setting)
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -124,6 +144,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'chapter_3.Seller'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -131,6 +153,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+# Django-Money Field Package
+CURRENCIES = ('USD', 'EUR')
+CURRENCY_CHOICES = [
+    ('USD', 'USD $'),
+    ('EUR', 'EUR €'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

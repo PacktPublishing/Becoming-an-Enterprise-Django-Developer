@@ -1,6 +1,9 @@
-django~=2.2
+django~=3.2
 django-extensions
 django-heroku
+django-address
+django-money
+django-phone-field
 dj-database-url
 gunicorn
 psycopg2

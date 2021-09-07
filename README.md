@@ -1,6 +1,7 @@
 ---
 
-# **Becoming an Enterprise Developer with Django Developer**
+# **Becoming an Enterprise Developer with Django**
 
 ---
+
 

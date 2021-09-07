@@ -1,0 +1,153 @@
+[
+  {
+    "model": "chapter_3.vehicle_model",
+    "pk": 1,
+    "fields": {
+      "name": "Envision Avenir",
+      "make": 1
+    }
+  },
+  {
+    "model": "chapter_3.vehicle_model",
+    "pk": 2,
+    "fields": {
+      "name": "Enclave Avenir",
+      "make": 1
+    }
+  },
+  {
+    "model": "chapter_3.vehicle_model",
+    "pk": 3,
+    "fields": {
+      "name": "Blazer LT",
+      "make": 3
+    }
+  },
+  {
+    "model": "chapter_3.engine",
+    "pk": 1,
+    "fields": {
+      "name": "3.6L DI DOHC 6cyl",
+      "model": 2
+    }
+  },
+  {
+    "model": "chapter_3.engine",
+    "pk": 2,
+    "fields": {
+      "name": "3.6L DI DOHC 6cyl",
+      "model": 3
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 1,
+    "fields": {
+      "vin": "aa123456789012345",
+      "sold": true,
+      "price_currency": "USD",
+      "price": "10000.00",
+      "make": 3,
+      "model": 3,
+      "engine": 2
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 2,
+    "fields": {
+      "vin": "aa234567890123456",
+      "sold": false,
+      "price_currency": "USD",
+      "price": "15200.00",
+      "make": 3,
+      "model": 3,
+      "engine": 2
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 3,
+    "fields": {
+      "vin": "aa345678901234567",
+      "sold": true,
+      "price_currency": "USD",
+      "price": "12250.00",
+      "make": 3,
+      "model": 3,
+      "engine": 2
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 4,
+    "fields": {
+      "vin": "aa456789012345678",
+      "sold": false,
+      "price_currency": "USD",
+      "price": "23499.00",
+      "make": 3,
+      "model": 3,
+      "engine": 2
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 5,
+    "fields": {
+      "vin": "aa567890123456789",
+      "sold": false,
+      "price_currency": "USD",
+      "price": "18299.00",
+      "make": 3,
+      "model": 3,
+      "engine": 2
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 6,
+    "fields": {
+      "vin": "aa678901234567890",
+      "sold": false,
+      "price_currency": "USD",
+      "price": "11350.00",
+      "make": 1,
+      "model": 1,
+      "engine": 1
+    }
+  },
+  {
+    "model": "chapter_3.vehicle",
+    "pk": 7,
+    "fields": {
+      "vin": "aa789012345678901",
+      "sold": false,
+      "price_currency": "USD",
+      "price": "23750.00",
+      "make": 1,
+      "model": 2,
+      "engine": 1
+    }
+  },
+  {
+    "model": "chapter_3.seller",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$SojQSyHvGi47zJh4moC5S6$vsWMBnbsHNyaY+gSWU9wzS1cc46tKPyt5y/XOoSgWJA=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "example@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-08-31T05:05:40.367Z",
+      "name": null,
+      "groups": [],
+      "user_permissions": [],
+      "vehicles": [ 1, 2, 3, 4, 5, 6, 7 ]
+    }
+  }
+]
