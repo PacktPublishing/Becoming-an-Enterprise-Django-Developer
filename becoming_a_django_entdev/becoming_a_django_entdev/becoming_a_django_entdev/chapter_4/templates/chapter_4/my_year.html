@@ -1,0 +1,35 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Year {% if year %}{{ year }} {% endif %}Page</title>
+    </head>
+
+    <body style="text-align:center">
+        <h1>Year Page</h1>
+
+        {% if year %}
+            <p>{{ year }}</p>
+        {% endif %}
+        
+        {% comment %}
+            <br /><br />
+
+            <a href="{% url 'year_url' 2023 %}">2023</a>
+            <a href="{% url 'year_url' 2024 %}">2024</a>
+            <a href="{% url 'year_url' 2025 %}">2025</a>
+            <a href="{% url 'year_url' 2026 %}">2026</a>
+            <a href="{% url 'year_url' 2027 %}">2027</a>
+        {% endcomment %}
+
+        {% comment %}
+            <br /><br />
+
+            <a href="{{ base_url }}{% url 'year_url' 2023 %}">2023</a>
+            <a href="{{ base_url }}{% url 'year_url' 2024 %}">2024</a>
+            <a href="{{ base_url }}{% url 'year_url' 2025 %}">2025</a>
+            <a href="{{ base_url }}{% url 'year_url' 2026 %}">2026</a>
+            <a href="{{ base_url }}{% url 'year_url' 2027 %}">2027</a>
+        {% endcomment %}
+    </body>
+</html>

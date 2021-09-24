@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Vehicle {% if vehicle %}#: {{ vehicle.vin }} {% endif %}Page</title>
+    </head>
+
+    <body style="text-align:center">
+        <h1>VehicleView Class 2</h1>
+
+        {% if vehicle %}
+            <p>{{ vehicle.vin }}</p>
+            <p>{{ vehicle.sold }}</p>
+            <p>{{ vehicle.price }}</p>
+            <p>{{ vehicle.make }}</p>
+            <p>{{ vehicle.model }}</p>
+            <p>{{ vehicle.engine }}</p>
+        {% endif %}
+    </body>
+</html>

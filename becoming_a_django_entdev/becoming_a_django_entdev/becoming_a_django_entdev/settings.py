@@ -16,10 +16,11 @@ import django_heroku
 import dj_database_url
 import dotenv
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-dotenv_file = os.path.join(BASE_DIR, ".env")
+dotenv_file = os.path.join(BASE_DIR, '.env')
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
@@ -27,7 +28,7 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e8a4a113-8637-41f4-be33-5c707fc9b3fc'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -71,6 +72,7 @@ LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_1',
     'becoming_a_django_entdev.chapter_2',
     'becoming_a_django_entdev.chapter_3',
+    'becoming_a_django_entdev.chapter_4',
 ]
 
 #### MERGE ALL APPS ####
@@ -104,12 +106,15 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'becoming_a_django_entdev.context_processors.global_context',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'becoming_a_django_entdev.wsgi.application'
+
+APPEND_SLASH = True
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

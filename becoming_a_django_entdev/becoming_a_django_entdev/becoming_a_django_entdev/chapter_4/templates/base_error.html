@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>{% block page_title %}Custom Error Page{% endblock %}</title>
+
+        {# GLOBAL STYLESHEETS #}
+        {% if debug %}
+            <link rel="stylesheet" href="{% static 'chapter_4/css/site.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static 'chapter_4/css/site.min.css' %}">
+        {% endif %}
+
+        {# PAGE/GROUP SPECIFIC STYLESHEET PLUGINS #}
+        {% block head_stylesheets %}{% endblock %}
+
+        {# GLOBAL JAVASCRIPT/JQUERY #}
+        {% if debug %}
+            <script type="text/javascript" src="{% static 'chapter_4/js/site-js.js' %}"></script>
+        {% else %}
+            <script type="text/javascript" src="{% static 'chapter_4/js/site-js.min.js' %}"></script>
+        {% endif %}
+
+        {# PAGE/GROUP SPECIFIC JAVASCRIPT PLUGINS #}
+        {% block head_scripts %}{% endblock %}
+    </head>
+
+    <body id="{% block page_id %}{% endblock %}" class="{% block page_class %}base-error-class{% endblock %}" style="text-align: center;">
+        {% block header %}
+            {% include 'chapter_4/headers/header_1.html' %}
+        {% endblock %}
+
+        {% block site_container %}
+            <div class="site-container">
+                <div class="body-content">
+                    {% block body_content %}{% endblock %}
+                </div>
+                
+                {% block footer %}
+                    {% include 'chapter_4/footers/footer_1.html' with message='Footer of Document' %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </body>
+</html>

@@ -11,3 +11,4 @@ pydotplus
 python-dotenv
 whitenoise
 psycopg2-binary==2.8.6
+secret-key-generator

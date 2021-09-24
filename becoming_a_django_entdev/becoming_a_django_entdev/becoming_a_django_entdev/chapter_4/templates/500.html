@@ -1,0 +1,12 @@
+{% extends 'base_error.html' %}
+{% load static %}
+
+{% block page_title %}Custom 500 Error Page{% endblock %}
+{% block head_stylesheets %}{% endblock %}
+{% block head_scripts %}{% endblock %}
+{% block page_id %}error-500{% endblock %}
+{% block page_class %}{{ block.super }} error-class-500{% endblock %}
+
+{% block body_content %}
+    <h1>My Custom 500 Error Page</h1>
+{% endblock %}

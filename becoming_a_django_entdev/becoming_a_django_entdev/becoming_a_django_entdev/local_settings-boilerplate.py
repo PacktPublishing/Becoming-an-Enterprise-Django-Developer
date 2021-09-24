@@ -11,17 +11,16 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e8a4a113-8637-41f4-be33-5c707fc9b3fc'
+#SECRET_KEY = 'your_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
+#INTERNAL_IPS = [
+#    '127.0.0.1',
+#]
 
 # Use this to configure a local PostgreSQL Database to use
 #DATABASES = {

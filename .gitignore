@@ -4,13 +4,16 @@
 *.pyc
 __pycache__
 db.sqlite3
-bin/
+migrations/
 local_settings.py
 !gitkeep.txt
-migrations/
 
-# Media - User Generated Content #
+# Static and Media - Never Changing Static Assets and User Generated Content #
+staticfiles/
 media/
+
+# This Project Specific Media
+!media/media.jpg
 
 # Environments #
 .env
@@ -35,6 +38,9 @@ virtual_env/
 !.vscode/extensions.json 
 obj/
 
+# PostgreSQL
+bin/
+
 # Python #
 *.py[cod] 
 *$py.class 
@@ -51,25 +57,29 @@ package.json
 package-lock.json
 
 # PyCharm # 
+/out/
+*.iws
 *.iws /out/ 
 .idea/**/workspace.xml 
 .idea/**/tasks.xml 
-.idea/dictionaries 
 .idea/**/dataSources/ 
 .idea/**/dataSources.ids 
 .idea/**/dataSources.xml 
 .idea/**/dataSources.local.xml 
-.idea/**/sqlDataSources.xml 
 .idea/**/dynamic.xml 
-.idea/**/uiDesigner.xml 
 .idea/**/gradle.xml 
 .idea/**/libraries 
+.idea/**/sqlDataSources.xml 
+.idea/**/uiDesigner.xml 
+.idea/dictionaries 
+atlassian-ide-plugin.xml
 
 # Distribution #
 *.egg 
 *.egg-info/ 
 *.manifest 
 *.spec 
+*.whl
 .installed.cfg
 .eggs/ 
 .Python build/ 
@@ -100,15 +110,15 @@ GitHub.sublime-settings
 
 # Other #
 *.bak 
-.ipynb_checkpoints 
 *.sage.py  
 *.cover 
-.tox/ 
+.ipynb_checkpoints 
 .coverage 
 .coverage.* 
 .cache 
 .hypothesis/ 
 .pytest_cache/ 
+.tox/ 
 celerybeat-schedule.* 
 coverage.xml 
 nosetests.xml 

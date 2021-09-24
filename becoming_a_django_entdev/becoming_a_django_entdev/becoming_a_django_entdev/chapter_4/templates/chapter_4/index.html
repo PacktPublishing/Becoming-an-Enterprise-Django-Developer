@@ -1,0 +1,17 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+
+    <body style="text-align:center">
+        <h1>Home Page</h1>
+
+        <img src="{% static 'chapter_4/home_page.jpg' %}" role="img" alt="Home Page Image" width="400" style="margin: 0 auto" />
+
+        {% if sub_title %}
+            <p>{{ sub_title }}</p>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'chapter_4/base/base_template_1.html' %}
+{% load static %}
+
+{% block page_title %}{{ title }}{% endblock %}
+{% block head_stylesheets %}{% endblock %}
+{% block head_scripts %}{% endblock %}
+{% block page_id %}{{ page_id }}{% endblock %}
+{% block page_class %}{{ block.super }} {{ page_class }}{% endblock %}
+
+{% block body_content %}
+    {% if h1_tag %}
+        <h1>{{ h1_tag }}</h1>
+    {% else %}
+        <h1>Title Not Found</h1>
+    {% endif %}
+{% endblock %}
