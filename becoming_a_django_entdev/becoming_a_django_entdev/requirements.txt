@@ -1,7 +1,8 @@
 django~=3.2
+django-address
 django-extensions
 django-heroku
-django-address
+django-debug-toolbar
 django-money
 django-phone-field
 dj-database-url

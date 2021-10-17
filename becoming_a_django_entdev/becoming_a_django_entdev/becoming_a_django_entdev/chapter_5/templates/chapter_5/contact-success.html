@@ -1,5 +1,5 @@
-{% extends 'chapter_4/base/base_template_1.html' %}
-{% load static %}
+{% extends 'chapter_5/base/base_template_1.html' %}
+{% load static chapter_5 %}
 
 {% block page_title %}{{ title }}{% endblock %}
 {% block head_stylesheets %}{% endblock %}
@@ -9,7 +9,7 @@
 
 {% block body_content %}
     {% if h1_tag %}
-        <h1>{{ h1_tag }}</h1>
+        <h1>{{ h1_tag|safe }}</h1>
     {% else %}
         <h1>Title Not Found</h1>
     {% endif %}

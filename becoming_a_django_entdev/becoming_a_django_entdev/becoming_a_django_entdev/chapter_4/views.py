@@ -1,8 +1,10 @@
-from django.shortcuts import render
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
-from django.views.generic import View 
+from django.views.generic import View
+
+
 from ..chapter_3.models import Vehicle
 
 
@@ -11,15 +13,18 @@ def practice_view(request, year):
 
 
 def practice_year_view(request, year):
+    # What Year Did The User Visit?
     print(type(year))
     print(year)
 
+    # Relative URL Lookup
     #print(reverse('year_url', args=(2023,)))
     #print(reverse('year_url', args=(2024,)))
     #print(reverse('year_url', args=(2025,)))
     #print(reverse('year_url', args=(2026,)))
     #print(reverse('year_url', args=(2027,)))
 
+    # Absolute URL Lookup (http://www.yourdomain.com and https://www.yourdomain.com)
     #print(request.build_absolute_uri(reverse('year_url', args=(2023,))))
     #print(request.build_absolute_uri(reverse('year_url', args=(2024,))))
     #print(request.build_absolute_uri(reverse('year_url', args=(2025,))))
@@ -34,6 +39,7 @@ def practice_year_view(request, year):
 
 def vehicle_view(request, id):
 #def vehicle_view(request, vin):
+    # Search By ID
     try:
         vehicle = Vehicle.objects.get(id=id)
     except Vehicle.DoesNotExist:
@@ -42,6 +48,7 @@ def vehicle_view(request, id):
         print(vehicle.get_url())
         print(vehicle.get_absolute_url(request))
 
+    # Search By VIN
     #try:
     #    vehicle = Vehicle.objects.get(vin=vin)
     #except Vehicle.DoesNotExist:
@@ -68,11 +75,29 @@ class VehicleView(View):
         return TemplateResponse(request, self.template_name, {'vehicle': vehicle})
 
     def post(self, request, *args, **kwargs):
-        return HttpResonseRedirect(reverse('success'))
+        #return redirect('/success/')
+        return HttpResponseRedirect('/success/')
 
 
 class VehicleView2(VehicleView):
     template_name = 'chapter_4/my_vehicle_class_2.html'
+
+    # Override As Necessary
+    #def get(self, request, id, *args, **kwargs):
+    #    try:
+    #        vehicle = Vehicle.objects.get(id=id)
+    #    except Vehicle.DoesNotExist:
+    #        raise Http404('Vehicle ID Not Found: %s' % id)
+    #    else:
+    #        print(vehicle.get_url())
+    #        print(vehicle.get_absolute_url(request))
+
+    #    return TemplateResponse(request, self.template_name, {'vehicle': vehicle})
+
+     # Override As Necessary
+    #def post(self, request, *args, **kwargs):
+    #    return redirect('/success/')
+    #    return HttpResponseRedirect('/success/')
 
 
 class TestPage_View(View):
@@ -87,4 +112,5 @@ class TestPage_View(View):
         })
 
     def post(self, request, *args, **kwargs):
-        return HttpResonseRedirect(reverse('success'))
+        #return redirect('/success/')
+        return HttpResponseRedirect('/success/')

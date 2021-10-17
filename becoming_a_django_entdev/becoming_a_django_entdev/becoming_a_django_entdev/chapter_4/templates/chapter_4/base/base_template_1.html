@@ -20,22 +20,19 @@
 
         {# GLOBAL JAVASCRIPT/JQUERY #}
         {% if debug %}
-            <script type="text/javascript" src="{{ base_url }}{% static 'chapter_4/js/site-js.js' %}"></script>
+            <script defer type="text/javascript" src="{{ base_url }}{% static 'chapter_4/js/site-js.js' %}"></script>
         {% else %}
-            <script type="text/javascript" src="{{ base_url }}{% static 'chapter_4/js/site-js.min.js' %}"></script>
+            <script defer type="text/javascript" src="{{ base_url }}{% static 'chapter_4/js/site-js.min.js' %}"></script>
         {% endif %}
-
-        {# PAGE/GROUP SPECIFIC JAVASCRIPT PLUGINS #}
-        {% block head_scripts %}{% endblock %}
     </head>
 
-    <body id="{% block page_id %}{% endblock %}" class="{% block page_class %}base-template-class{% endblock %}" style="text-align: center;">
-        {% block header %}
-            {% include 'chapter_4/headers/header_1.html' %}
-        {% endblock %}
-
+    <body id="{% block page_id %}{% endblock %}" class="{% block page_class %}base-template-class{% endblock %} chapter_4" style="text-align: center;">
         {% block site_container %}
             <div class="site-container">
+                {% block header %}
+                    {% include 'chapter_4/headers/header_1.html' %}
+                {% endblock %}
+
                 <div class="body-content">
                     {% block body_content %}{% endblock %}
                 </div>
@@ -45,5 +42,8 @@
                 {% endblock %}
             </div>
         {% endblock %}
+
+        {# PAGE/GROUP SPECIFIC JAVASCRIPT PLUGINS #}
+        {% block js_scripts %}{% endblock %}
     </body>
 </html>

@@ -1,5 +1,6 @@
 from django.template import Library
 
+
 register = Library()
 
 
@@ -9,7 +10,7 @@ def vehicle_make(value):
     Takes in a numeric (int) ID and returns a string representation of that value
     '''
     from ...chapter_3.models import MAKE_CHOICES
-    
+
     print(value)
     print(MAKE_CHOICES)
 

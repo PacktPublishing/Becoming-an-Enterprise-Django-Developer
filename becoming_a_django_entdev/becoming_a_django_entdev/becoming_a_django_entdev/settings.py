@@ -38,12 +38,15 @@ INTERNAL_IPS = [
 ]
 
 ALLOWED_HOSTS = [
+    # Keep these two as is, unless you are using different local/internal IP's
     '127.0.0.1',
     'localhost',
+    # Add your-domain.com
     'mikedinder.com',
     'www.mikedinder.com',
     'dev.mikedinder.com',
     'staging.mikedinder.com',
+    # Add your-heroku-app.herokuapp.com
     'becoming-an-entdev.herokuapp.com',
     'mighty-sea-09431.herokuapp.com',
     'pure-atoll-19670.herokuapp.com',
@@ -62,6 +65,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'debug_toolbar',
     'django_extensions',
     'address',
     'djmoney',
@@ -73,6 +77,7 @@ LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_2',
     'becoming_a_django_entdev.chapter_3',
     'becoming_a_django_entdev.chapter_4',
+    'becoming_a_django_entdev.chapter_5',
 ]
 
 #### MERGE ALL APPS ####
@@ -81,6 +86,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -171,6 +177,21 @@ CURRENCY_CHOICES = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+import mimetypes
+
+mimetypes.add_type("application/javascript", ".js", True)
+
+def show_toolbar(request):
+    return True
+
+# SECURITY WARNING: don't run with debug turned on in production!
+TEMPLATE_DEBUG = DEBUG
+
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
+    "INTERCEPT_REDIRECTS": False,
+}
 
 django_heroku.settings(locals())
 
