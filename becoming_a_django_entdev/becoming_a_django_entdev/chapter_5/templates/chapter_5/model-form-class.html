@@ -9,7 +9,7 @@
 
 {% block body_content %}
     {% if h1_tag %}
-        <h1>{{ h1_tag }}</h1>
+        <h1>{{ h1_tag|safe }}</h1>
     {% else %}
         <h1>Title Not Found</h1>
     {% endif %}
