@@ -26,8 +26,12 @@ from .chapter_4 import views
 from .chapter_4.views import TestPage_View, VehicleView, VehicleView2
 
 
-register_converter(converters.YearConverter, 'year')
+# CHAPTERS 1, 2 & 3 - Use this variable and comment out the rest
+#urlpatterns = []
 
+
+# CHAPTER 4 - Use these variables and comment out the rest
+register_converter(converters.YearConverter, 'year')
 
 favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
@@ -58,9 +62,17 @@ urlpatterns = [
     #path('vehicle/<int:id>/', VehicleView2.as_view(), name='vehicle-detail'),
     #path('test_page_1/', TestPage_View.as_view(), name='test-page'),
     #path('', include('becoming_a_django_entdev.chapter_4.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# CHAPTER 5 - Use these variables and comment out the rest
+# Using the import statement allows us to bundle all future chapters in a clean way just like chapter 5. Whereas chapter 4 we were still explaining core concepts using this file before we introduced this way of organizing URL patterns.
+urlpatterns = [
     path('', include('becoming_a_django_entdev.chapter_5.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+# CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all chapters to allow the writer and the testers to use it and make sure things are working properly but this tool is not revealed to the reader until Chapter 9
 # Debug/Development Mode Only
 if settings.DEBUG:
     import debug_toolbar

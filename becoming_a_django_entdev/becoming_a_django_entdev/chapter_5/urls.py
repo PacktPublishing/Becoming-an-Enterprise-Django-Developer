@@ -17,13 +17,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path, register_converter
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 
 from . views import FormClass_View, ModelFormClass_CreateView, ModelFormClass_UpdateView
 
 
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
+
 urlpatterns = [
+    # Global Favicon Path Enabled
+    re_path(r'^favicon\.ico$', favicon_view), # Can Still Use "<link rel="icon" href="{% static 'app_name/sub_folder/images/favicon.ico' %}">" For Custom Sub Page Favicons
+    path('', TemplateView.as_view(template_name='chapter_5/index.html')),
+    path('admin/', admin.site.urls),
+
     #path('chapter-5/form-class', FormClass_View.as_view(template_name='chapter_5/form-class.html')), # Non-Forward Slash Only
     #path('chapter-5/form-class/', FormClass_View.as_view(template_name='chapter_5/form-class.html')), # Forward Slash Only
     re_path(r'^chapter-5/form-class/?$', FormClass_View.as_view(template_name='chapter_5/form-class.html')), # Accepts Both Forward Slash and Non-Forward Slash
