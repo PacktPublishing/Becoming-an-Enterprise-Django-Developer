@@ -31,6 +31,7 @@ class Vehicle_Model(models.Model):
     name = models.CharField(
         verbose_name = 'Model',
         max_length = 75,
+        unique = True,
         blank = True,
         null = True,
     )
@@ -63,7 +64,7 @@ class Engine(models.Model):
         blank = True,
         null = True,
     )
-    model = models.ForeignKey(
+    vehicle_model = models.ForeignKey(
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
@@ -88,7 +89,7 @@ class engine2(models.Model):
         blank = True,
         null = True,
     )
-    model = models.ForeignKey(
+    vehicle_model = models.ForeignKey(
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
@@ -159,7 +160,7 @@ class Vehicle(models.Model):
         blank = True,
         null = True,
     )
-    model = models.ForeignKey(
+    vehicle_model = models.ForeignKey(
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',

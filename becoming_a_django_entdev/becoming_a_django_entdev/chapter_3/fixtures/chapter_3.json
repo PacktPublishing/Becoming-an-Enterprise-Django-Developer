@@ -28,7 +28,7 @@
     "pk": 1,
     "fields": {
       "name": "3.6L DI DOHC 6cyl",
-      "model": 2
+      "vehicle_model": 2
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 2,
     "fields": {
       "name": "3.9L DI DOHC 6cyl",
-      "model": 3
+      "vehicle_model": 3
     }
   },
   {
@@ -48,7 +48,7 @@
       "price_currency": "USD",
       "price": "10000.00",
       "make": 3,
-      "model": 3,
+      "vehicle_model": 3,
       "engine": 2
     }
   },
@@ -61,7 +61,7 @@
       "price_currency": "USD",
       "price": "15200.00",
       "make": 3,
-      "model": 3,
+      "vehicle_model": 3,
       "engine": 2
     }
   },
@@ -74,7 +74,7 @@
       "price_currency": "USD",
       "price": "12250.00",
       "make": 3,
-      "model": 3,
+      "vehicle_model": 3,
       "engine": 2
     }
   },
@@ -87,7 +87,7 @@
       "price_currency": "USD",
       "price": "32600.00",
       "make": 3,
-      "model": 3,
+      "vehicle_model": 3,
       "engine": 2
     }
   },
@@ -100,7 +100,7 @@
       "price_currency": "USD",
       "price": "18299.00",
       "make": 3,
-      "model": 3,
+      "vehicle_model": 3,
       "engine": 2
     }
   },
@@ -113,7 +113,7 @@
       "price_currency": "USD",
       "price": "11350.00",
       "make": 1,
-      "model": 1,
+      "vehicle_model": 1,
       "engine": 1
     }
   },
@@ -126,7 +126,7 @@
       "price_currency": "USD",
       "price": "23750.00",
       "make": 1,
-      "model": 2,
+      "vehicle_model": 2,
       "engine": 1
     }
   },

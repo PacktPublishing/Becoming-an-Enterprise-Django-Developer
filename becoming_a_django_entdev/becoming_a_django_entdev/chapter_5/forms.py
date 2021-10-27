@@ -194,7 +194,7 @@ class ContactForm(Form):
 class VehicleForm(ModelForm):
     class Meta:
         model = Vehicle
-        fields = ['vin', 'sold', 'price', 'make', 'model', 'engine',]
+        fields = ['vin', 'sold', 'price', 'make', 'vehicle_model', 'engine',]
 
 
 class ProspectiveBuyerForm(Form):

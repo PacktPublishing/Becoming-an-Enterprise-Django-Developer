@@ -124,7 +124,7 @@ class ModelFormClass_CreateView(CreateView):
             #    sold = form.instance.sold,
             #    price = form.instance.price,
             #    make = form.instance.make,
-            #    model = form.instance.model,
+            #    vehicle_model = form.instance.model,
             #    engine = form.instance.engine,
             #)
             #vehicle.save()
@@ -199,7 +199,7 @@ class ModelFormClass_UpdateView(UpdateView):
             #    sold = form.instance.sold,
             #    price = form.instance.price,
             #    make = form.instance.make,
-            #    model = form.instance.model,
+            #    vehicle_model = form.instance.model,
             #    engine = form.instance.engine,
             #)
             #vehicle.save()
