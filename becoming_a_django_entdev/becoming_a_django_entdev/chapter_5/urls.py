@@ -2,8 +2,7 @@
 becoming_a_django_entdev.chapter_5 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -23,13 +22,8 @@ from django.views.generic import TemplateView, RedirectView
 from . views import FormClass_View, ModelFormClass_CreateView, ModelFormClass_UpdateView
 
 
-favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
-
 urlpatterns = [
-    # Global Favicon Path Enabled
-    re_path(r'^favicon\.ico$', favicon_view), # Can Still Use "<link rel="icon" href="{% static 'app_name/sub_folder/images/favicon.ico' %}">" For Custom Sub Page Favicons
     path('', TemplateView.as_view(template_name='chapter_5/index.html')),
-    path('admin/', admin.site.urls),
 
     #path('chapter-5/form-class', FormClass_View.as_view(template_name='chapter_5/form-class.html')), # Non-Forward Slash Only
     #path('chapter-5/form-class/', FormClass_View.as_view(template_name='chapter_5/form-class.html')), # Forward Slash Only

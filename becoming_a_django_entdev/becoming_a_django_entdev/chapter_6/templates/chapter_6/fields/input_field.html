@@ -1,0 +1,21 @@
+{% load static %}
+
+{% if field %}
+    <div class="field-box input-box{% if field.errors %} error{% endif %}">
+        <label for="{{ field.id_for_label }}">
+            {% if field.field.required %}<span class="required">*</span>{% endif %}{{ field.label|safe }}
+        </label>
+
+        <div class="form-group">
+            {{ field }}
+
+            {{ field.errors|safe }}
+
+            {% if field.help_text and field.help_text != '' %}
+                <span class="help-text">
+                    {{ field.help_text|safe }}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

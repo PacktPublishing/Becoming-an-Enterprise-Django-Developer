@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3, minimum-scale=1" />
+
+        <title>{% block page_title %}My Page Title{% endblock %}</title>
+
+        {# GLOBAL STYLESHEETS #}
+        {% if debug %}
+            <link rel="stylesheet" href="{{ base_url }}{% static 'chapter_6/css/site.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{{ base_url }}{% static 'chapter_6/css/site.min.css' %}">
+        {% endif %}
+
+        {# PAGE/GROUP SPECIFIC STYLESHEET PLUGINS #}
+        {% block head_stylesheets %}{% endblock %}
+
+        {# GLOBAL JAVASCRIPT/JQUERY #}
+        {% if debug %}
+            <script defer type="text/javascript" src="{{ base_url }}{% static 'chapter_6/js/site-js.js' %}"></script>
+        {% else %}
+            <script defer type="text/javascript" src="{{ base_url }}{% static 'chapter_6/js/site-js.min.js' %}"></script>
+        {% endif %}
+
+        {# PAGE/GROUP SPECIFIC JAVASCRIPT PLUGINS #}
+        {% block js_scripts %}{% endblock %}
+    </head>
+
+    <body id="{% block page_id %}{% endblock %}" class="{% block page_class %}base-template-class{% endblock %} chapter_6" style="text-align: center;">
+        {% block site_container %}
+            <div class="site-container">
+                {% block header %}
+                    {% include 'chapter_6/headers/header_1.html' %}
+                {% endblock %}
+
+                <div class="body-content">
+                    {% block body_content %}{% endblock %}
+                </div>
+                
+                {% block footer %}
+                    {% include 'chapter_6/footers/footer_1.html' with message='Footer of Document' %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </body>
+</html>

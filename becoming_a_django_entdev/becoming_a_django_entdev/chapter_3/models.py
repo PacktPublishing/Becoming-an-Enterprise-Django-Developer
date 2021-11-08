@@ -184,7 +184,7 @@ class Vehicle(models.Model):
     def __str__(self):
         MAKE_CHOICES_DICT = dict(MAKE_CHOICES)
 
-        return MAKE_CHOICES_DICT[self.make] + ' ' + self.model.name
+        return MAKE_CHOICES_DICT[self.make] + ' ' + self.vehicle_model.name
 
     def full_vehicle_name(self):
         return self.__str__() + ' - ' + self.engine.name
@@ -212,7 +212,7 @@ class Vehicle(models.Model):
 
 class Seller(AbstractUser):
     name = models.CharField(
-        verbose_name = 'Seller Name',
+        verbose_name = 'Business Name',
         max_length = 150,
         blank = True,
         null = True,

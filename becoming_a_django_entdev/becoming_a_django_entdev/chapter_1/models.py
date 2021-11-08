@@ -61,7 +61,7 @@ class Team(models.Model):
     #    User,
     #    verbose_name = 'Assigned Users',
     #    blank = True,
-    #    help_text = 'List of all the Users assigned to this Team.'),
+    #    help_text = 'List of all the Users assigned to this Team.',
     #    related_name = 'user_team',
     #    related_query_name = 'user_teams',
     #)
