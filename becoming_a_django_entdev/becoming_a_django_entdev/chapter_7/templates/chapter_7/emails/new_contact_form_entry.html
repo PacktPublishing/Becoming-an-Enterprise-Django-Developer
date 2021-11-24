@@ -1,0 +1,27 @@
+{% load static chapter_7 %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Form Submitted</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>New Contact Form Entry</h1>
+            <h2>The field contents are listed below</h2>
+            <ul>
+                <li>Full Name: {{ data.full_name }}</li>
+                <li>Email Field Example 1: {{ data.email_1 }}</li>
+                <li>Email Field Example 2: {{ data.email_2 }}</li>
+                <li>Email Field Example 3: {{ data.email_3 }}</li>
+                <li>Conditionally Required Field: {{ data.conditional_required }}</li>
+                <li>Multiple Emails Field: {{ data.multiple_emails }}</li>
+                <li>Message: {{ data.message }}</li>
+            </ul>
+        </center>
+    </body>
+</html>

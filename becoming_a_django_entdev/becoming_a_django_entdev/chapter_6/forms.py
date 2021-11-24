@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 from django.core.validators import EmailValidator, validate_email
 from django.forms import Form, ModelForm, formset_factory
 
-from ..chapter_5.fields import MultipleEmailField
 from ..chapter_3.models import Engine, Seller, Vehicle, Vehicle_Model
 
 

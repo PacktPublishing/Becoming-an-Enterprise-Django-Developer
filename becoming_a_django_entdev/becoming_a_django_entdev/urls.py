@@ -62,25 +62,35 @@ urlpatterns = [
 #    #path('vehicle/<int:id>/', VehicleView2.as_view(), name='vehicle-detail'),
 #    #path('test_page_1/', TestPage_View.as_view(), name='test-page'),
 #    #path('', include('becoming_a_django_entdev.chapter_4.urls')),
-#] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#] # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #
 #urlpatterns = urlpatterns + [
 #    path('', include('becoming_a_django_entdev.chapter_5.urls')),
-#] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#]
 # END - CHAPTER 5 #
 
 # CHAPTER 6 - Uncomment for Chapter 6 Only, Comment Out For All Other Chapters #
-urlpatterns = urlpatterns + [
-    path('', include('becoming_a_django_entdev.chapter_6.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns = urlpatterns + [
+#    path('', include('becoming_a_django_entdev.chapter_6.urls')),
+#]
 # END - CHAPTER 6 #
+
+# CHAPTER 7 - Uncomment for Chapter 7 Only, Comment Out For All Other Chapters #
+urlpatterns = urlpatterns + [
+    path('', include('becoming_a_django_entdev.chapter_7.urls')),
+]
+# END - CHAPTER 7 #
 
 # CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all chapters to allow the writer and the testers to use it and make sure things are working properly but this tool is not revealed to the reader until Chapter 9
 # Debug/Development Mode Only
 if settings.DEBUG:
     import debug_toolbar
+
+    # This is a better way to organize the STATIC and MEDIA patterns versus how it was added in the Chapter 4 URL Patterns above
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     # Django Debug Toolbar
     urlpatterns = [

@@ -16,6 +16,7 @@ import dj_database_url
 import dotenv
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -54,6 +55,16 @@ ALLOWED_HOSTS = [
     'pure-atoll-19670.herokuapp.com',
 ]
 
+# Chapter 7 - Email Test Service Integration
+if DEBUG:
+    EMAIL_HOST = os.getenv('EMAIL_HOST')
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+    EMAIL_PORT = os.getenv('EMAIL_PORT')
+else:
+    # Production Email Connection Settings
+    pass
+
 # Application References
 # https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-INSTALLED_APPS
 DJANGO_APPS = [
@@ -61,13 +72,13 @@ DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.sessions', # Chapter 7 - Django Messages Framework
+    'django.contrib.messages', # Chapter 7 - Django Messages Framework
     'django.contrib.staticfiles',
 ]
 
 THIRD_PARTY_APPS = [
-    'debug_toolbar',
+    'debug_toolbar', # Introduced in Chapter 9
     'django_extensions',
     'address',
     'djmoney',
@@ -75,12 +86,13 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 6 - 10, this will need to be commented out
+    #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well.
     'becoming_a_django_entdev.chapter_2',
     'becoming_a_django_entdev.chapter_3',
     'becoming_a_django_entdev.chapter_4',
     'becoming_a_django_entdev.chapter_5',
     'becoming_a_django_entdev.chapter_6',
+    'becoming_a_django_entdev.chapter_7',
 ]
 
 #### MERGE ALL APPS ####
@@ -92,11 +104,11 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # Chapter 7 - Django Messages Framework
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware', # Chapter 7 - Django Messages Framework
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -114,7 +126,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages', # Chapter 7 - Django Messages Framework
                 'becoming_a_django_entdev.context_processors.global_context',
             ],
         },
@@ -123,8 +135,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'becoming_a_django_entdev.wsgi.application'
 
+PREPEND_WWW = False
 APPEND_SLASH = True
 
+# Database Connection that was auto-generated using the Visual Studio IDE. An SQLite Database was also auto-created in the project root directory.
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #DATABASES = {
@@ -134,10 +148,12 @@ APPEND_SLASH = True
 #    }
 #}
 
+# Database Connection used in Chapter 2, works with Heroku as our Host. Relies on this variable in the .env file DATABASE_URL = postgres://postgres:db_password@localhost:5432/db_name
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
 
+# Chapter 3 - Django Models
 # Django 3.2 Default Auto ID (Primary Key Setting)
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
@@ -158,6 +174,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Chapter 3 - Custom User Model
 AUTH_USER_MODEL = 'chapter_3.Seller'
 
 # Internationalization
@@ -181,16 +198,44 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
+# Chapter 7 - Django Messages Framework
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+# Alternate Choices
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.base.BaseStorage'
+
+# Chapter 7 - Django Messages Framework
+if DEBUG:
+    MESSAGE_LEVEL = messages.DEBUG
+else:
+    pass
+
+# Custom Message Tag Constants
+MINOR = 50
+MAJOR = 60
+CRITICAL = 70
+
+MESSAGE_TAGS = {
+    messages.INFO: 'information',
+    MINOR: 'minor',
+    MAJOR: 'major',
+    CRITICAL: 'critical',
+}
+
 import mimetypes
 
 mimetypes.add_type('application/javascript', '.js', True)
 
+# Chapter 9 - Testing/Debug Tool
 def show_toolbar(request):
     return True
 
+# Chapter 9 - Testing/Debug Tool
 # SECURITY WARNING: don't run with debug turned on in production!
 TEMPLATE_DEBUG = DEBUG
 
+# Chapter 9 - Testing/Debug Tool
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK' : show_toolbar,
     'INTERCEPT_REDIRECTS': False,

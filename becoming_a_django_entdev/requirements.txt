@@ -8,8 +8,10 @@ django-phone-field
 dj-database-url
 gunicorn
 psycopg2
+psycopg2-binary==2.8.6
 pydotplus
 python-dotenv
-whitenoise
-psycopg2-binary==2.8.6
+reportlab
 secret-key-generator
+xhtml2pdf
+whitenoise

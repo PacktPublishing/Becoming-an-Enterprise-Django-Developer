@@ -1,0 +1,94 @@
+{% extends 'chapter_7/base/base_template_1.html' %}
+{% load static chapter_7 %}
+
+{% block page_title %}{{ title }}{% endblock %}
+{% block head_stylesheets %}{% endblock %}
+{% block js_scripts %}{% endblock %}
+{% block page_id %}{{ page_id }}{% endblock %}
+{% block page_class %}{{ block.super }} {{ page_class }}{% endblock %}
+
+{% block body_content %}
+    {% if h1_tag %}
+        <h1>{{ h1_tag|safe }}</h1>
+    {% else %}
+        <h1>Title Not Found</h1>
+    {% endif %}
+
+    <form method="post" id="form">
+        {% csrf_token %}
+
+        {% comment %}{# Form Generated Without Special Formatting #}
+        {#{{ form }}#}
+        {% endcomment %}
+
+        {% comment %}{# Form Generated with Fields Wrapped in <p></p> tags #}
+        {{ form.as_p }}
+        {% endcomment %}
+
+        {% comment %}{# Form Generated with Fields Wrapped in <li></li> tags #}
+        {#<ul>
+            {{ form.as_ul }}
+        </ul>#}
+        {% endcomment %}
+
+        {% comment %}{# Form Generated with Fields Wrapped in <tr></tr> tags #}
+        {#<table>
+            {{ form.as_table }}
+        </table>#}
+        {% endcomment %}
+
+        {# Custom Formatting, Note - This can also be done in-line without using {% include %} tags. Alternatively, you can override any Django Form Widget template found in the /django/forms/templates/django/forms/widgets folder of your virtual environment. To override any of these templates, place the folder structure /django/forms/widgets inside any of your apps template folder. #}
+        {% for field in form.visible_fields %}
+            {% comment %}{# Renders Field In-line #}
+            {#<div class="field-box{% if field.errors %} error{% endif %}">
+                <label for="{{ field.id_for_label }}">
+                    {% if field.field.required %}<span class="required">*</span>{% endif %}{{ field.label|safe }}
+                </label>
+
+                <div class="form-group">
+                    {{ field }}
+
+                    {{ field.errors|safe }}
+
+                    {% if field.help_text and field.help_text != '' %}
+                        <span class="help-text">
+                            {{ field.help_text|safe }}
+                        </span>
+                    {% endif %}
+                </div>
+            </div>#}
+            {% endcomment %}
+
+            {# Renders Field By Field Type #}
+            {% if field.field.widget|class_name == 'TextInput' or field.field.widget|class_name == 'EmailInput' %}
+                {% include 'chapter_7/fields/input_field.html' with field=field %}
+            {% elif field.field.widget|class_name == 'Textarea' %}
+                {% include 'chapter_7/fields/textarea_field.html' with field=field %}
+            {% else %}
+                {{ field }}
+            {% endif %}
+        {% endfor %}
+
+        {% if buyer_formset %}
+            <h3>Prospective Buyers</h3>
+
+            {{ buyer_formset.non_form_errors }}
+            {{ buyer_formset.management_form }}
+
+            {% for form in buyer_formset %}
+                <div class="formset-container {{ buyer_formset.prefix }}">
+                    <div class="first-name">{{ form.first_name.label }}: {{ form.first_name }}</div>
+                    <div class="last-name">{{ form.last_name.label }}: {{ form.last_name }}</div>
+
+                    {% if buyer_formset.can_delete %}
+                        <div class="delete">{{ form.DELETE }} {{ form.DELETE.label }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <button id="add-formset" type="button">Add Another Prospective Buyer</button>
+
+        <input type="submit" value="Save Vehicle">
+    </form>
+{% endblock %}
