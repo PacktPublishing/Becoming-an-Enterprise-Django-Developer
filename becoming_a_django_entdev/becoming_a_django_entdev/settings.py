@@ -19,10 +19,12 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 
 
+# Chapter 2 - Project Configuration
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Chapter 2 - Project Configuration
 dotenv_file = os.path.join(BASE_DIR, '.env')
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
@@ -30,16 +32,20 @@ if os.path.isfile(dotenv_file):
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+# Chapter 2 - Project Configuration
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+# Chapter 2 - Project Configuration
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
+# Chapter 2 - Project Configuration
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
+# Chapter 2 - Project Configuration
 ALLOWED_HOSTS = [
     # Keep these two as is, unless you are using different local/internal IP's
     '127.0.0.1',
@@ -62,7 +68,7 @@ if DEBUG:
     EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
     EMAIL_PORT = os.getenv('EMAIL_PORT')
 else:
-    # Production Email Connection Settings
+    # Production Email Connection Settings Go Here...
     pass
 
 # Application References
@@ -83,6 +89,8 @@ THIRD_PARTY_APPS = [
     'address',
     'djmoney',
     'phone_field',
+    'rest_framework', # Chapter 8 - Django REST Framework
+    'rest_framework.authtoken', # Chapter 8 - Django REST Framework
 ]
 
 LOCAL_APPS = [
@@ -93,11 +101,14 @@ LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_5',
     'becoming_a_django_entdev.chapter_6',
     'becoming_a_django_entdev.chapter_7',
+    'becoming_a_django_entdev.chapter_8',
 ]
 
+# Chapter 2 - Project Configuration
 #### MERGE ALL APPS ####
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+# Chapter 2 - Project Configuration
 # Middleware framework
 # https://docs.djangoproject.com/en/3.2/topics/http/middleware/
 MIDDLEWARE = [
@@ -112,8 +123,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Chapter 2 - Project Configuration
 ROOT_URLCONF = 'becoming_a_django_entdev.urls'
 
+# Chapter 2 - Project Configuration
 # Template configuration
 # https://docs.djangoproject.com/en/3.2/topics/templates/
 TEMPLATES = [
@@ -133,11 +146,12 @@ TEMPLATES = [
     },
 ]
 
+# Chapter 2 - Project Configuration
 WSGI_APPLICATION = 'becoming_a_django_entdev.wsgi.application'
-
 PREPEND_WWW = False
 APPEND_SLASH = True
 
+# Chapter 2 - Project Configuration
 # Database Connection that was auto-generated using the Visual Studio IDE. An SQLite Database was also auto-created in the project root directory.
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -148,6 +162,7 @@ APPEND_SLASH = True
 #    }
 #}
 
+# Chapter 2 - Project Configuration
 # Database Connection used in Chapter 2, works with Heroku as our Host. Relies on this variable in the .env file DATABASE_URL = postgres://postgres:db_password@localhost:5432/db_name
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
@@ -157,6 +172,7 @@ DATABASES = {
 # Django 3.2 Default Auto ID (Primary Key Setting)
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+# Chapter 2 - Project Configuration
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -177,6 +193,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Chapter 3 - Custom User Model
 AUTH_USER_MODEL = 'chapter_3.Seller'
 
+# Chapter 2 - Project Configuration
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -185,12 +202,29 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Chapter 2 - Project Configuration
 # Django-Money Field Package
 CURRENCIES = ('USD', 'EUR')
 CURRENCY_CHOICES = [
     ('USD', 'USD $'),
     ('EUR', 'EUR €'),
 ]
+
+# Chapter 8 - Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.IsAdminUser',
+        #'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        #'rest_framework.permissions.DjangoModelPermissions',
+    ],
+    #'PAGE_SIZE': 10
+}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -211,11 +245,13 @@ if DEBUG:
 else:
     pass
 
+# Chapter 7 - Django Messages Framework
 # Custom Message Tag Constants
 MINOR = 50
 MAJOR = 60
 CRITICAL = 70
 
+# Chapter 7 - Django Messages Framework
 MESSAGE_TAGS = {
     messages.INFO: 'information',
     MINOR: 'minor',
@@ -223,8 +259,8 @@ MESSAGE_TAGS = {
     CRITICAL: 'critical',
 }
 
+# Chapter 7 - Django Messages Framework
 import mimetypes
-
 mimetypes.add_type('application/javascript', '.js', True)
 
 # Chapter 9 - Testing/Debug Tool
@@ -241,11 +277,14 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
 
+# Chapter 2 - Project Configuration
 django_heroku.settings(locals())
 
+# Chapter 2 - Project Configuration
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
+# Chapter 2 - Project Configuration
 try:
     from .local_settings import *
 except ImportError:

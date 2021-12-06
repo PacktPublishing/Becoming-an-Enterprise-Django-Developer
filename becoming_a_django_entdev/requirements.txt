@@ -1,12 +1,15 @@
 django~=3.2
 django-address
 django-extensions
+django-filter
 django-heroku
 django-debug-toolbar
 django-money
 django-phone-field
+djangorestframework
 dj-database-url
 gunicorn
+markdown
 psycopg2
 psycopg2-binary==2.8.6
 pydotplus

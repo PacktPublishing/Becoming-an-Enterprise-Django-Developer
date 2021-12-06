@@ -1,0 +1,21 @@
+{% load static %}
+
+<h1>Seller Details</h1>
+
+{% if seller %}
+    <h2>{{ seller.first_name|safe }} {{ seller.last_name|safe }}</h2>
+    <h3>{{ seller.name|safe }}</h3>
+
+    {% if seller.vehicles %}
+        <ul>
+            {% for vehicle in seller.vehicles.all %}
+                <li>{{ vehicle.fullname }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% else %}
+    <p>
+        <b>No Seller to Display</b><br />
+        <em>or you <b>DO NOT</b> have permission</em>
+    </p>
+{% endif %}

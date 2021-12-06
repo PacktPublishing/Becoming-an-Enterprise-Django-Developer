@@ -1,0 +1,89 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "test_group",
+      "permissions": [
+        [ "add_engine", "chapter_3", "engine" ],
+        [ "change_engine", "chapter_3", "engine" ],
+        [ "delete_engine", "chapter_3", "engine" ],
+        [ "view_engine", "chapter_3", "engine" ],
+        [ "add_engine3", "chapter_3", "engine3" ],
+        [ "change_engine3", "chapter_3", "engine3" ],
+        [ "delete_engine3", "chapter_3", "engine3" ],
+        [ "view_engine3", "chapter_3", "engine3" ],
+        [ "add_seller", "chapter_3", "seller" ],
+        [ "change_seller", "chapter_3", "seller" ],
+        [ "delete_seller", "chapter_3", "seller" ],
+        [ "view_seller", "chapter_3", "seller" ],
+        [ "add_vehicle", "chapter_3", "vehicle" ],
+        [ "change_vehicle", "chapter_3", "vehicle" ],
+        [ "delete_vehicle", "chapter_3", "vehicle" ],
+        [ "view_vehicle", "chapter_3", "vehicle" ],
+        [ "add_vehicle_model", "chapter_3", "vehicle_model" ],
+        [ "change_vehicle_model", "chapter_3", "vehicle_model" ],
+        [ "delete_vehicle_model", "chapter_3", "vehicle_model" ],
+        [ "view_vehicle_model", "chapter_3", "vehicle_model" ]
+      ]
+    }
+  },
+  {
+    "model": "chapter_3.seller",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$agUQ6sGdDltFwJNd7Uto7E$g/4+voZU7bsCcHF8p8X4cLupfzD0PoZsjdN9uq0fjPU=",
+      "last_login": "2021-11-07T19:35:52Z",
+      "is_superuser": false,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "testing@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-11-07T19:34:53Z",
+      "name": null,
+      "groups": [],
+      "user_permissions": [
+        [ "view_seller", "chapter_3", "seller" ]
+      ],
+      "vehicles": []
+    }
+  },
+  {
+    "model": "chapter_3.seller",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$xXZbV8LGWziVme48XRAVQo$N59w/aKC9Re2N2uJSFbUmzY5q7pQ2gpnwEHuIyffTfU=",
+      "last_login": "2021-12-03T23:23:12.657Z",
+      "is_superuser": true,
+      "username": "superadmin",
+      "first_name": "",
+      "last_name": "",
+      "email": "mike@mikedinder.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-12-03T22:38:45.123Z",
+      "name": null,
+      "groups": [],
+      "user_permissions": [],
+      "vehicles": []
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "d237fd8092ef4725a14b6febf43637ff623f0925",
+    "fields": {
+      "user": [ "admin" ],
+      "created": "2021-12-04T00:18:50.998Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "fd9191f7d80770014d9e2824693bfbcf9225a020",
+    "fields": {
+      "user": [ "test" ],
+      "created": "2021-12-04T02:56:36.935Z"
+    }
+  }
+]

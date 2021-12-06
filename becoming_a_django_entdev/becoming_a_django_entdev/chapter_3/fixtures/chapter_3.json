@@ -135,19 +135,19 @@
     "pk": 1,
     "fields": {
       "password": "pbkdf2_sha256$260000$SojQSyHvGi47zJh4moC5S6$vsWMBnbsHNyaY+gSWU9wzS1cc46tKPyt5y/XOoSgWJA=",
-      "last_login": null,
+      "last_login": "2021-12-05T18:19:38.979Z",
       "is_superuser": true,
       "username": "admin",
-      "first_name": "Test",
+      "first_name": "Admin",
       "last_name": "User",
       "email": "example@example.com",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2021-08-31T05:05:40.367Z",
+      "date_joined": "2021-08-31T05:05:40Z",
       "name": "Test Biz Name",
       "groups": [],
       "user_permissions": [],
-      "vehicles": [ 1, 2, 3, 4, 5, 6, 7 ]
+      "vehicles": [ 2, 4, 5, 6, 7, 1, 3 ]
     }
   }
 ]

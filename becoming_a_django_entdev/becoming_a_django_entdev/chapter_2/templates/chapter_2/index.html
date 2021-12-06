@@ -1,9 +1,19 @@
-<html>
-<head><title></title></head>
+{% load static %}
 
-<body>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Home Page</title>
+    </head>
 
-{{ content }}
+    <body style="text-align:center" class="chapter_2">
+        <h1>Home Page</h1>
 
-</body>
+        <h2>Chapter 2</h2>
+
+        <img src="{% static 'chapter_2/home_page.jpg' %}" role="img" alt="Home Page Image" width="400" style="margin: 0 auto" />
+
+        {% if sub_title %}
+            <p>{{ sub_title }}</p>
+        {% endif %}
+    </body>
 </html>

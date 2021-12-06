@@ -23,6 +23,7 @@ from . views import FormClass_View, ModelFormClass_CreateView, ModelFormClass_Up
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='chapter_7/index.html')),
 
     #path('chapter-7/form-class', FormClass_View.as_view(template_name='chapter_7/form-class.html')), # Non-Forward Slash Only

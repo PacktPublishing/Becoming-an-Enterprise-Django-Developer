@@ -11,7 +11,7 @@ from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteVi
 
 
 from .forms import ContactForm, VehicleForm, ProspectiveBuyerForm, ProspectiveBuyerFormSet
-from ..chapter_3.models import Vehicle, Engine, Vehicle_Model
+from ..chapter_3.models import Seller, Vehicle, Engine, Vehicle_Model
 
 
 class FormClass_View(FormView):

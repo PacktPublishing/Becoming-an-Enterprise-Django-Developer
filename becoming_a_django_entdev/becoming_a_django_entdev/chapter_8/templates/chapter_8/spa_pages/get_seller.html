@@ -1,0 +1,30 @@
+{% extends 'chapter_8/base/base_template_1.html' %}
+{% load static %}
+
+{% block page_title %}Seller SPA Page{% endblock %}
+{% block head_stylesheets %}{% endblock %}
+{% block js_scripts %}{% endblock %}
+{% block page_id %}seller-spa{% endblock %}
+{% block page_class %}seller-spa{% endblock %}
+
+{% block body_content %}
+    <form>
+        <div class="field-box input-box">
+            <label for="seller-id">Seller ID:</label>
+
+            <div class="form-group">
+                <input id="seller-id" type="text" />
+
+                <span class="help-text">Please enter the ID of the seller you want to lookup</span>
+            </div>
+        </div>
+
+        <button type="button" id="get-sellers" onclick="$gotoSPA_Page()">Get Seller Details</button>
+    </form>
+
+    <br />
+
+    <div id="details">
+        <p>!!! No Details to Display !!!</p>
+    </div>
+{% endblock %}

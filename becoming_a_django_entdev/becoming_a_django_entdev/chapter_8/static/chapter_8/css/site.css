@@ -1,0 +1,247 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 1.15vw;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+::-moz-placeholder {
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+::-ms-input-placeholder {
+  text-align: center;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+::-ms-input-placeholder {
+  text-align: center;
+}
+
+header {
+  margin: 0 auto 2em;
+  border-bottom: 0.0625em solid #000000;
+}
+
+footer {
+  margin: 2em auto 0;
+  border-top: 0.0625em solid #000000;
+}
+
+h1 {
+  font-size: 1.75em;
+  margin: 0.25em auto 0;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 0.25em auto 0;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+  display: table;
+}
+
+#details {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+form p,
+.field-box {
+  width: 100%;
+  margin: 0 auto 2em;
+  display: table;
+  text-align: center;
+}
+
+form p label,
+.field-box label {
+  width: 100%;
+  display: block;
+  margin: 0 auto 0.5em;
+}
+
+form p input,
+.field-box input {
+  width: 90%;
+  height: 2.25em;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.125em 0.5em;
+  border: 0.0625em solid #000000;
+}
+
+form p textarea,
+.field-box textarea {
+  width: 65%;
+  margin: 0 auto;
+  padding: 0.125em 0.5em;
+  border: 0.0625em solid #000000;
+}
+
+.field-box .form-group {
+  width: 100%;
+}
+
+form p .helptext,
+.field-box .help-text {
+  width: 90%;
+  display: block;
+  font-size: 0.8em;
+  margin: 0.5em auto 0;
+  color: #808080;
+  padding: 0 0.75em;
+}
+
+.error-msg,
+.errorlist li {
+  color: #cc0000;
+}
+
+.form-group .errorlist {
+  width: 90%;
+  padding: 0;
+  margin: 0.5em auto;
+}
+
+.form-group .errorlist li {
+  list-style-type: none;
+}
+
+.field-error {
+  border: 0.0625em solid #cc0000 !important;
+}
+
+.formset-container {
+  display: table;
+  margin: 0 auto 1em;
+}
+
+.formset-container div {
+  display: inline-block;
+  float: left;
+  margin: 0 0.25em;
+}
+
+/* DJANGO MESSAGES FRAMEWORK CSS */
+.messages {
+  list-style-type: none;
+}
+
+/*.messages li:before {
+  content: '!!!'
+}
+
+.messages li:after {
+  content: '!!!'
+}*/
+
+.messages .debug {
+  color: gray;
+}
+
+.messages .info,
+.messages .information {
+  color: purple;
+}
+
+.messages .success {
+  color: green;
+}
+
+.messages .warning {
+  color: yellow;
+}
+
+.messages .error {
+  color: red;
+}
+
+.messages .minor {
+  color: orange;
+}
+
+.messages .major {
+  color: red;
+}
+
+.messages .critical {
+  color: darkred;
+}
+
+.messages .bold {
+  font-weight: bold !important;
+}
+
+/* BREAKPOINT - 1599px & BELOW - {A.K.A. 1200 VIEW} */
+@media screen and (max-width: 1599px) {
+  /**** Adjusts Font Size So Text Is Readable and Still Scalable ****/
+  .site-container {
+    font-size: 1.25em;
+  }
+}
+
+/* BREAKPOINT - 1199px & BELOW  - {A.K.A. 1024 VIEW} */
+@media screen and (max-width: 1199px) {
+  /**** Adjusts Font Size So Text Is Readable and Still Scalable ****/
+  .site-container {
+    font-size: 1.4em;
+  }
+}
+
+/* BREAKPOINT - 1023px & BELOW  - {A.K.A. 768 VIEW} */
+@media screen and (max-width: 1023px) {
+  /**** Adjusts Font Size So Text Is Readable and Still Scalable ****/
+  .site-container {
+    font-size: 1.9em;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* BREAKPOINT - 767px & BELOW  - {A.K.A. 640 VIEW} */
+@media screen and (max-width: 767px) {
+  .site-container {
+    font-size: 2.25em;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+/* BREAKPOINT - 639px & BELOW - {A.K.A. 480 VIEW} */
+@media screen and (max-width: 639px) {
+  .site-container {
+    font-size: 3.5em;
+  }
+
+  form p .helptext,
+  .field-box .help-text {
+    font-size: 1em;
+  }
+}

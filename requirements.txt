@@ -1,15 +1,1 @@
-django~=3.2
-django-address
-django-extensions
-django-heroku
-django-debug-toolbar
-django-money
-django-phone-field
-dj-database-url
-gunicorn
-psycopg2
-pydotplus
-python-dotenv
-whitenoise
-psycopg2-binary==2.8.6
-secret-key-generator
+-r becoming_a_django_entdev/requirements.txt
