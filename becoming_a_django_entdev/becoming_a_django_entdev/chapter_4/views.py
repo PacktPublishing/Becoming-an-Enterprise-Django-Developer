@@ -104,6 +104,7 @@ class TestPage_View(View):
     template_name = 'chapter_4/pages/test_page_1.html'
 
     def get(self, request, *args, **kwargs):
+        print(request.build_absolute_uri())
         return TemplateResponse(request, self.template_name, {
             'title': 'My Test Page 1',
             'page_id': 'test-id-1',

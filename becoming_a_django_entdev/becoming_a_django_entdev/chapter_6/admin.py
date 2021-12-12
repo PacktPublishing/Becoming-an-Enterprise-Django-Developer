@@ -1,7 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .forms import AddEngineForm, EngineForm, EngineSuperUserForm, AddSellerForm, SellerForm, SellerSuperUserForm
+from .forms import (
+    AddEngineForm,
+    EngineForm,
+    EngineSuperUserForm,
+    AddSellerForm,
+    SellerForm,
+    SellerSuperUserForm
+)
 from ..chapter_3.models import Engine, Seller, Vehicle, Vehicle_Model
 
 

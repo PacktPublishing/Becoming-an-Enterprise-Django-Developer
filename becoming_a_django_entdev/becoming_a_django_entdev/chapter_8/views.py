@@ -107,6 +107,12 @@ class ContentTypeViewSet(ModelViewSet):
     ]
 
 
+class HelloWorldView(APIView):
+    def get(self, request):
+        content = {'message': 'Hello, World!'}
+        return Response(content)
+
+
 class GetSellerView(View):
     '''
     This is a custom view used to get Seller data by ID using an input field to capture that ID by the User.
@@ -127,14 +133,17 @@ class GetSellerView(View):
         pass
 
 
-class GetSellerHTMLView(View):
+class GetSellerHTMLView(APIView):
     '''
     This is an AJAX only view.
     Used to serve up the Seller with the id provided and rendered as preformatted HTML
     '''
+    #authentication_classes = [TokenAuthentication]
+    #permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
     template_name = 'chapter_8/details/seller.html'
 
-    def get(self, request, id, *args, **kwargs):
+    def get(self, request, format=None, id=0, *args, **kwargs):
         print('ID = ', id)
         print(type(id))
 
@@ -163,12 +172,6 @@ class GetSellerHTMLView(View):
     def post(self, request, *args, **kwargs):
         # Not Used In This View
         pass
-
-
-class HelloWorldView(APIView):
-    def get(self, request):
-        content = {'message': 'Hello, World!'}
-        return Response(content)
 
 
 class GetSellerWithTokenView(APIView):

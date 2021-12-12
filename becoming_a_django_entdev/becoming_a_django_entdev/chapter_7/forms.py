@@ -200,6 +200,8 @@ class ContactForm(Form):
     def send_email(self, request):
         print('Creating Email')
 
+        # The 'request' variable not used, but it can be passed in to access here in any way you would normally use the 'request' object.
+
         data = self.cleaned_data
 
         # Used for Sending Template Based Emails
@@ -262,27 +264,27 @@ class ContactForm(Form):
     def generate_pdf(self, request):
         print('Generating PDF')
 
-        # Used for Dynamic PDF Example
+        template = get_template('chapter_7/pdfs/pdf_template.html')
+
+        # Used for Template Based PDF - Static PDF Example
+        #dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test.pdf', 'w+b')
+        
+        # Used for Template Based PDF w/ Context - Dynamic PDF Example
         data = self.cleaned_data
         context = {
             'data': data
         }
-
-        # Used for Static PDF Example
-        #dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test_static.pdf', 'w+b')
         
-        # Used for Dynamic PDF Example
-        dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test_dynamic.pdf', 'w+b')
-
-        template = get_template('chapter_7/pdfs/pdf_template.html')
-
-        # Used for Static PDF Example
+        # Used for Template Based PDF w/ Context - Dynamic PDF Example
+        dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test_2.pdf', 'w+b')
+        
+        # Used for Template Based PDF - Static PDF Example
         #html = template.render()
-
-        # Used for Dynamic PDF Example
+        
+        # Used for Template Based PDF w/ Context - Dynamic PDF Example
         html = template.render(context)
 
-        # Create the PDF Document
+        # Creates the PDF Document
         result = pisa.CreatePDF(
             html,
             dest = dest,
@@ -291,7 +293,7 @@ class ContactForm(Form):
         # Optional Error Catching
         #if result.err:
         #    print('PDF Error Found')
-        #    return HttpResponse('We had some errors generating the PDF. Error found ', result.err)
+        #    return HttpResponse('We had problems generating the PDF. Error found {0}'.format(result.err))
 
         return HttpResponse(result.err)
 

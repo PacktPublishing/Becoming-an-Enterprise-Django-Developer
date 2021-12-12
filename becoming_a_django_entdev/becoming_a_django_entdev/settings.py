@@ -233,7 +233,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 # Chapter 7 - Django Messages Framework
-MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # Alternate Choices
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'

@@ -2,11 +2,25 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.forms.widgets import (
-    FILE_INPUT_CONTRADICTION, CheckboxInput, ClearableFileInput, DateInput,
-    DateTimeInput, EmailInput, FileInput, HiddenInput, MultipleHiddenInput,
-    NullBooleanSelect, NumberInput, Select, SelectMultiple,
-    SplitDateTimeWidget, SplitHiddenDateTimeWidget, Textarea, TextInput,
-    TimeInput, URLInput,
+    FILE_INPUT_CONTRADICTION,
+    CheckboxInput,
+    ClearableFileInput,
+    DateInput,
+    DateTimeInput,
+    EmailInput,
+    FileInput,
+    HiddenInput,
+    MultipleHiddenInput,
+    NullBooleanSelect,
+    NumberInput,
+    Select,
+    SelectMultiple,
+    SplitDateTimeWidget,
+    SplitHiddenDateTimeWidget,
+    Textarea,
+    TextInput,
+    TimeInput,
+    URLInput,
 )
 
 

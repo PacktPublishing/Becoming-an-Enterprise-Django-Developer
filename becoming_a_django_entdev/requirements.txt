@@ -1,4 +1,4 @@
-django~=3.2
+django~=4.0
 django-address
 django-extensions
 django-filter
@@ -11,7 +11,7 @@ dj-database-url
 gunicorn
 markdown
 psycopg2
-psycopg2-binary==2.8.6
+psycopg2-binary
 pydotplus
 python-dotenv
 reportlab

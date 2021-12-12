@@ -52,8 +52,8 @@ class FormClass_View(FormView):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            #messages.add_message(request, messages.SUCCESS, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
-            messages.success(request, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
+            messages.add_message(request, messages.SUCCESS, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
+            #messages.success(request, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
             #messages.add_message(request, settings.CRITICAL, 'This is critical!')
 
             #return HttpResponseRedirect(self.success_url)
@@ -66,8 +66,8 @@ class FormClass_View(FormView):
                 'form': form,
             }
         else:
-            #messages.add_message(request, messages.ERROR, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
-            messages.error(request, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
+            messages.add_message(request, messages.ERROR, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
+            #messages.error(request, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
 
             context = {
                 'title': 'FormClass_View Page - Please Correct The Errors Below',
@@ -77,8 +77,8 @@ class FormClass_View(FormView):
                 'form': form,
             }
 
-        form.send_email(request)
-        form.generate_pdf(request)
+        #form.send_email(request)
+        #form.generate_pdf(request)
 
         return TemplateResponse(request, self.template_name, context)
 

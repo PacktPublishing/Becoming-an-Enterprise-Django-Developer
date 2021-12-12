@@ -49,6 +49,11 @@ footer {
 
 h1 {
   font-size: 1.75em;
+  margin: 0.25em auto 0;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 0.25em auto 0;
 }
 
 /* BREAKPOINT - 1599px & BELOW - {A.K.A. 1200 VIEW} */
