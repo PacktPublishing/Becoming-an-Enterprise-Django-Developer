@@ -17,58 +17,29 @@
     <form method="post" id="form">
         {% csrf_token %}
 
-        {% comment %}{# Form Generated Without Special Formatting #}
-        {#{{ form }}#}
-        {% endcomment %}
+        {# Form Generated Without Special Formatting #}
+        {{ form }}
 
-        {% comment %}{# Form Generated with Fields Wrapped in <p></p> tags #}
+        {# Form Generated with Fields Wrapped in <p></p> tags #}
+        {% comment %}
         {{ form.as_p }}
         {% endcomment %}
 
-        {% comment %}{# Form Generated with Fields Wrapped in <li></li> tags #}
-        {#<ul>
+        {# Form Generated with Fields Wrapped in <li></li> tags #}
+        {% comment %}
+        <ul>
             {{ form.as_ul }}
-        </ul>#}
+        </ul>
         {% endcomment %}
 
-        {% comment %}{# Form Generated with Fields Wrapped in <tr></tr> tags #}
-        {#<table>
+        {# Form Generated with Fields Wrapped in <tr></tr> tags #}
+        {% comment %}
+        <table>
             {{ form.as_table }}
-        </table>#}
+        </table>
         {% endcomment %}
 
-        {# Custom Formatting, Note - This can also be done in-line without using {% include %} tags. Alternatively, you can override any Django Form Widget template found in the /django/forms/templates/django/forms/widgets folder of your virtual environment. To override any of these templates, place the folder structure /django/forms/widgets inside any of your apps template folder. #}
-        {% for field in form.visible_fields %}
-            {% comment %}{# Renders Field In-line #}
-            {#<div class="field-box{% if field.errors %} error{% endif %}">
-                <label for="{{ field.id_for_label }}">
-                    {% if field.field.required %}<span class="required">*</span>{% endif %}{{ field.label|safe }}
-                </label>
-
-                <div class="form-group">
-                    {{ field }}
-
-                    {{ field.errors|safe }}
-
-                    {% if field.help_text and field.help_text != '' %}
-                        <span class="help-text">
-                            {{ field.help_text|safe }}
-                        </span>
-                    {% endif %}
-                </div>
-            </div>#}
-            {% endcomment %}
-
-            {# Renders Field By Field Type #}
-            {% if field.field.widget|class_name == 'TextInput' or field.field.widget|class_name == 'EmailInput' %}
-                {% include 'chapter_5/fields/input_field.html' with field=field %}
-            {% elif field.field.widget|class_name == 'Textarea' %}
-                {% include 'chapter_5/fields/textarea_field.html' with field=field %}
-            {% else %}
-                {{ field }}
-            {% endif %}
-        {% endfor %}
-
+        {# In-line Formset Example #}
         {% if buyer_formset %}
             <h3>Prospective Buyers</h3>
 
@@ -87,6 +58,7 @@
             {% endfor %}
         {% endif %}
 
+        {# Dynamic - Add In-line Formset Button Example #}
         <button id="add-formset" type="button">Add Another Prospective Buyer</button>
 
         <input type="submit" value="Save Vehicle">

@@ -189,14 +189,6 @@ class ContactForm(Form):
 
         return email
 
-    # Append Invalid Data To Context
-    #def update_Context_With_Invalid_Response(self, form, context):
-    #    context = {
-    #        'form': form
-    #    }
-
-    #    return context
-
     def send_email(self, request):
         print('Creating Email')
 

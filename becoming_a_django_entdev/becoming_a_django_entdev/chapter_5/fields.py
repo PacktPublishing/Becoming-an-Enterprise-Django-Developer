@@ -1,6 +1,6 @@
-from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
+from django.forms.fields import Field
 from django.forms.widgets import (
     FILE_INPUT_CONTRADICTION,
     CheckboxInput,
@@ -24,7 +24,7 @@ from django.forms.widgets import (
 )
 
 
-class MultipleEmailField(forms.Field):
+class MultipleEmailField(Field):
     '''
     Custom Multiple Email Field class
     '''

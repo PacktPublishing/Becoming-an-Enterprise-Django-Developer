@@ -19,7 +19,7 @@ from django.urls import include, path, re_path, register_converter
 from django.views.generic import TemplateView, RedirectView
 
 
-from . views import FormClass_View, ModelFormClass_CreateView, ModelFormClass_UpdateView
+from .views import FormClass_View, ModelFormClass_CreateView, ModelFormClass_UpdateView
 
 
 urlpatterns = [

@@ -9,6 +9,7 @@ from ..chapter_3.models import Vehicle
 
 class ContactForm(Form):
     #pass
+    template_name = 'chapter_5/forms/custom-form.html'
     success_url = '/default-contact-success/'
 
     full_name = forms.CharField(
@@ -95,6 +96,8 @@ class ContactForm(Form):
             #'email': 'Custom email message, overrides default_error_messages'
         }
     )
+
+    # Extra Practice - Text Area Field
     message = forms.CharField(
         label = 'Message',
         widget = forms.Textarea(
@@ -182,16 +185,11 @@ class ContactForm(Form):
 
         return email
 
-    # Append Invalid Data To Context
-    #def update_Context_With_Invalid_Response(self, form, context):
-    #    context = {
-    #        'form': form
-    #    }
-
-    #    return context
-
 
 class VehicleForm(ModelForm):
+    #pass
+    #template_name = 'chapter_5/forms/custom-model-form.html'
+
     class Meta:
         model = Vehicle
         fields = ['vin', 'sold', 'price', 'make', 'vehicle_model', 'engine',]

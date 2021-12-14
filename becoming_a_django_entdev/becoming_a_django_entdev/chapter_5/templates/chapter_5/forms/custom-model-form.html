@@ -1,0 +1,33 @@
+{% load static chapter_5 %}
+
+{% for field, errors in fields %}
+    {# Renders Field In-line #}
+    <div class="field-box{% if field.errors %} error{% endif %}">
+        <label for="{{ field.id_for_label }}">
+            {% if field.field.required %}<span class="required">*</span>{% endif %}{{ field.label|safe }}
+        </label>
+
+        <div class="form-group">
+            {{ field }}
+
+            {{ field.errors|safe }}
+
+            {% if field.help_text and field.help_text != '' %}
+                <span class="help-text">
+                    {{ field.help_text|safe }}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    {# Extra Practice - Renders Field By Field Type #}
+    {% comment %}
+    {% if field.field.widget|class_name == 'TextInput' or field.field.widget|class_name == 'EmailInput' %}
+        {% include 'chapter_5/fields/input_field.html' with field=field %}
+    {% elif field.field.widget|class_name == 'Textarea' %}
+        {% include 'chapter_5/fields/textarea_field.html' with field=field %}
+    {% else %}
+        {{ field }}
+    {% endif %}
+    {% endcomment %}
+{% endfor %}
