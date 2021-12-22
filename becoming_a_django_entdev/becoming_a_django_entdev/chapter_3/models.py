@@ -17,13 +17,13 @@ MAKE_CHOICES = (
     (1, 'Buick'),
     (2, 'Cadillac'),
     (3, 'Chevrolet'),
-    (4, 'GMC'),
-    (5, 'Chrysler'),
-    (6, 'Dodge'),
-    (7, 'Jeep'),
-    (8, 'RAM'),
-    (9, 'Ford'),
-    (10, 'Lincoln'),
+    (4, 'Ford'),
+    (5, 'GMC'),
+    (6, 'Chrysler'),
+    (7, 'Dodge'),
+    (8, 'Jeep'),
+    (9, 'Lincoln'),
+    (10, 'Tesla'),
 )
 
 

@@ -136,7 +136,7 @@ class GetSellerView(View):
 class GetSellerHTMLView(APIView):
     '''
     This is an AJAX only view.
-    Used to serve up the Seller with the id provided and rendered as preformatted HTML
+    Used to serve up the Seller with the id provided and rendered as pre-formatted HTML
     '''
     #authentication_classes = [TokenAuthentication]
     #permission_classes = [IsAdminUser]
@@ -144,23 +144,23 @@ class GetSellerHTMLView(APIView):
     template_name = 'chapter_8/details/seller.html'
 
     def get(self, request, format=None, id=0, *args, **kwargs):
-        print('ID = ', id)
-        print(type(id))
+        #print('ID = ', id)
+        #print(type(id))
 
-        print('User = ', request.user)
-        print('Is User Authenticated ', request.user.is_authenticated)
-        print('Does User Have Permission? ', request.user.has_perm('chapter_3.view_seller'))
+        #print('User = ', request.user)
+        #print('Is User Authenticated ', request.user.is_authenticated)
+        #print('Does User Have Permission? ', request.user.has_perm('chapter_3.view_seller'))
 
         if request.user.is_authenticated and request.user.has_perm('chapter_3.view_seller'):
-            print('AUTHENTICATED')
+            #print('AUTHENTICATED')
             
             try:
                 seller = Seller.objects.get(id=id)
             except Seller.DoesNotExist:
-                print('SELLER NOT FOUND')
+                #print('SELLER NOT FOUND')
                 seller = None
         else:
-            print('NOT AUTHENTICATED')
+            #print('NOT AUTHENTICATED')
             seller = None
 
         context = {
@@ -186,33 +186,33 @@ class GetSellerWithTokenView(APIView):
     template_name = 'chapter_8/details/seller.html'
 
     def get(self, request, format=None, id=0, *args, **kwargs):
-        print(request.__dict__)
-        print('id = ', id)
-        print('request.user = ',request.user)
-        print('request.auth = ', request.auth)
-        print('format = ', format)
-        print('HTTP_USER = ', request.META['HTTP_USER'])
-        print('HTTP_AUTHORIZATION = ', request.META['HTTP_AUTHORIZATION'])
+        #print(request.__dict__)
+        #print('id = ', id)
+        #print('request.user = ',request.user)
+        #print('request.auth = ', request.auth)
+        #print('format = ', format)
+        #print('HTTP_USER = ', request.META['HTTP_USER'])
+        #print('HTTP_AUTHORIZATION = ', request.META['HTTP_AUTHORIZATION'])
 
         req_username = request.META['HTTP_USER']
 
         try:
             req_user = Seller.objects.get(username=req_username)
         except Seller.DoesNotExist:
-            print('REQ USER NOT FOUND')
+            #print('REQ USER NOT FOUND')
             req_user = None
             seller = None
         else:
             if req_user.has_perm('chapter_3.view_seller'):
-                print('PERM CHECK PERMITTED')
+                #print('PERM CHECK PERMITTED')
 
                 try:
                     seller = Seller.objects.get(id=id)
                 except Seller.DoesNotExist:
-                    print('SELLER NOT FOUND')
+                    #print('SELLER NOT FOUND')
                     seller = None
             else:
-                print('PERM CHECK NOT PERMITTED')
+                #print('PERM CHECK NOT PERMITTED')
                 seller = None
 
         context = {
@@ -240,8 +240,8 @@ def seller_HTML(request, id):
     This is an AJAX only view.
     Used to serve up the Seller with the id provided
     '''
-    print(id)
-    print(type(id))
+    #print(id)
+    #print(type(id))
 
     seller = Seller.objects.get(id=id)
 

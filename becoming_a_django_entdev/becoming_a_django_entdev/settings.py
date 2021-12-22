@@ -84,7 +84,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'debug_toolbar', # Introduced in Chapter 9
+    'debug_toolbar', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
     'django_extensions',
     'address',
     'djmoney',
@@ -102,6 +102,7 @@ LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_6',
     'becoming_a_django_entdev.chapter_7',
     'becoming_a_django_entdev.chapter_8',
+    'becoming_a_django_entdev.chapter_9',
 ]
 
 # Chapter 2 - Project Configuration
@@ -109,7 +110,7 @@ LOCAL_APPS = [
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Chapter 2 - Project Configuration
-# Middleware framework
+# Middleware Framework
 # https://docs.djangoproject.com/en/3.2/topics/http/middleware/
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -263,19 +264,15 @@ MESSAGE_TAGS = {
 import mimetypes
 mimetypes.add_type('application/javascript', '.js', True)
 
-# Chapter 9 - Testing/Debug Tool
+# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting those exercises.
 def show_toolbar(request):
     return True
 
-# Chapter 9 - Testing/Debug Tool
-# SECURITY WARNING: don't run with debug turned on in production!
-TEMPLATE_DEBUG = DEBUG
-
-# Chapter 9 - Testing/Debug Tool
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK' : show_toolbar,
-    'INTERCEPT_REDIRECTS': False,
-}
+# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting those exercises.
+if os.getenv('SHOW_TOOLBAR_CALLBACK') == 'True':
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
+    }
 
 # Chapter 2 - Project Configuration
 django_heroku.settings(locals())

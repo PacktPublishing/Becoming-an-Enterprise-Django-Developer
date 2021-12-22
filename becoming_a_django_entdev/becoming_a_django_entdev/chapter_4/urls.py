@@ -19,11 +19,11 @@ from django.contrib import admin
 from django.urls import include, path, re_path, register_converter
 from django.views.generic import TemplateView, RedirectView
 
-from .. import converters
+from .converters import YearConverter
 from .views import TestPage_View, VehicleView, VehicleView2, practice_year_view, practice_view, vehicle_view
 
 
-register_converter(converters.YearConverter, 'year')
+register_converter(YearConverter, 'year')
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='chapter_4/index.html')),

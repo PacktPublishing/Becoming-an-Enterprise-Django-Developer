@@ -32,12 +32,6 @@ urlpatterns = [
 # END - CHAPTERS 1, 2 & 3 #
 
 # CHAPTER 4 - Uncomment for Chapter 4 Only, Comment Out For All Other Chapters #
-from . import converters
-from .chapter_4 import views
-from .chapter_4.views import TestPage_View, VehicleView, VehicleView2, practice_year_view, practice_view, vehicle_view
-
-register_converter(converters.YearConverter, 'year')
-
 urlpatterns = urlpatterns + [
     #path('', TemplateView.as_view(template_name='chapter_4/index.html')),
     #path('', TemplateView.as_view(template_name='chapter_4/index.html'), kwargs={'sub_title': 'I am the sub title.'}),
@@ -48,9 +42,9 @@ urlpatterns = urlpatterns + [
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #
-urlpatterns = urlpatterns + [
-    path('', include('becoming_a_django_entdev.chapter_5.urls')),
-]
+#urlpatterns = urlpatterns + [
+#    path('', include('becoming_a_django_entdev.chapter_5.urls')),
+#]
 # END - CHAPTER 5 #
 
 # CHAPTER 6 - Uncomment for Chapter 6 Only, Comment Out For All Other Chapters #
@@ -69,7 +63,14 @@ urlpatterns = urlpatterns + [
 #urlpatterns = urlpatterns + [
 #    path('', include('becoming_a_django_entdev.chapter_8.urls')),
 #]
-# END - CHAPTER 7 #
+# END - CHAPTER 8 #
+
+# CHAPTER 9 - Uncomment for Chapter 9 Only, Comment Out For All Other Chapters #
+urlpatterns = urlpatterns + [
+    path('', include('becoming_a_django_entdev.chapter_9.urls')),
+    path('', include('becoming_a_django_entdev.chapter_8.urls')),
+]
+# END - CHAPTER 9 #
 
 # CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all chapters to allow the writer and the testers to use it and make sure things are working properly but this tool is not revealed to the reader until Chapter 9
 # Debug/Development Mode Only
@@ -82,5 +83,5 @@ if settings.DEBUG:
 
     # Django Debug Toolbar
     urlpatterns = [
-        path('__debug__/', include(debug_toolbar.urls)),
+        re_path(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns

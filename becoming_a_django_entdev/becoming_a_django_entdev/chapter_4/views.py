@@ -1,3 +1,4 @@
+import logging
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
@@ -14,8 +15,8 @@ def practice_view(request, year):
 
 def practice_year_view(request, year):
     # What Year Did The User Visit?
-    print(type(year))
-    print(year)
+    #print(type(year))
+    #print(year)
 
     # Relative URL Lookup
     #print(reverse('year_url', args=(2023,)))
@@ -31,6 +32,11 @@ def practice_year_view(request, year):
     #print(request.build_absolute_uri(reverse('year_url', args=(2026,))))
     #print(request.build_absolute_uri(reverse('year_url', args=(2027,))))
 
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+
+    logger.info('The Requested Year Is: %s' % year)
+
     if year >= 1900:
         return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
     else:
@@ -44,9 +50,9 @@ def vehicle_view(request, id):
         vehicle = Vehicle.objects.get(id=id)
     except Vehicle.DoesNotExist:
         raise Http404('Vehicle ID Not Found: %s' % id)
-    else:
-        print(vehicle.get_url())
-        print(vehicle.get_absolute_url(request))
+    #else:
+    #    print(vehicle.get_url())
+    #    print(vehicle.get_absolute_url(request))
 
     # Search By VIN
     #try:
@@ -68,9 +74,9 @@ class VehicleView(View):
             vehicle = Vehicle.objects.get(id=id)
         except Vehicle.DoesNotExist:
             raise Http404('Vehicle ID Not Found: %s' % id)
-        else:
-            print(vehicle.get_url())
-            print(vehicle.get_absolute_url(request))
+        #else:
+        #    print(vehicle.get_url())
+        #    print(vehicle.get_absolute_url(request))
 
         return TemplateResponse(request, self.template_name, {'vehicle': vehicle})
 
