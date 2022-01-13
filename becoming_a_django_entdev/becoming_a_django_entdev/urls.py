@@ -34,6 +34,7 @@ urlpatterns = [
 # CHAPTER 4 - Uncomment for Chapter 4 Only, Comment Out For All Other Chapters #
 urlpatterns = urlpatterns + [
     #path('', TemplateView.as_view(template_name='chapter_4/index.html')),
+
     #path('', TemplateView.as_view(template_name='chapter_4/index.html'), kwargs={'sub_title': 'I am the sub title.'}),
     #path('chapter-4/', TemplateView.as_view(template_name='chapter_4/chapter_4.html')),
 

@@ -230,8 +230,10 @@ REST_FRAMEWORK = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_URL = '/static/'
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_URL = '/staticfiles/'
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['staticfiles']))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['media']))
 
 # Chapter 7 - Django Messages Framework
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
