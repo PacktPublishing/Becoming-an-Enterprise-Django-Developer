@@ -94,7 +94,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well.
+    #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well. The reason errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting to now point to the Seller model instead of the default User model. A model in Chapter 1's example points to the original User model, proceed with caution.
     'becoming_a_django_entdev.chapter_2',
     'becoming_a_django_entdev.chapter_3',
     'becoming_a_django_entdev.chapter_4',
@@ -103,6 +103,7 @@ LOCAL_APPS = [
     'becoming_a_django_entdev.chapter_7',
     'becoming_a_django_entdev.chapter_8',
     'becoming_a_django_entdev.chapter_9',
+    'becoming_a_django_entdev.chapter_10',
 ]
 
 # Chapter 2 - Project Configuration
@@ -128,7 +129,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'becoming_a_django_entdev.urls'
 
 # Chapter 2 - Project Configuration
-# Template configuration
+# Template Configuration
 # https://docs.djangoproject.com/en/3.2/topics/templates/
 TEMPLATES = [
     {
@@ -174,7 +175,7 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Chapter 2 - Project Configuration
-# Password validation
+# Password Validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -227,7 +228,7 @@ REST_FRAMEWORK = {
 }
 
 
-# Static files (CSS, JavaScript, Images)
+# Static Files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/staticfiles/'

@@ -14,6 +14,7 @@ psycopg2
 psycopg2-binary
 pydotplus
 python-dotenv
+pyyaml
 reportlab
 secret-key-generator
 xhtml2pdf

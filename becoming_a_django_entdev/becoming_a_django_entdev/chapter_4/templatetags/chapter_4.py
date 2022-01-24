@@ -11,16 +11,16 @@ def vehicle_make(value):
     '''
     from ...chapter_3.models import MAKE_CHOICES
 
-    print(value)
-    print(MAKE_CHOICES)
+    #print(value)
+    #print(MAKE_CHOICES)
 
     for i, choice in enumerate(MAKE_CHOICES):
-        print(i)
-        print(choice)
+        #print(i)
+        #print(choice)
 
         if i == value:
             try:
-                print(choice[1])
+                #print(choice[1])
                 return choice[1]
             except ValueError:
                 pass

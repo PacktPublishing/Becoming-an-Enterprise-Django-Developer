@@ -45,6 +45,9 @@ class Vehicle_Model(models.Model):
     def __str__(self):
         return self.name
 
+    def natural_key(self):
+        return self.__str__()
+
     class Meta(object):
         ordering = ['name',]
         verbose_name = 'Vehicle Model'
@@ -75,6 +78,9 @@ class Engine(models.Model):
 
     def __str__(self):
         return self.name
+
+    def natural_key(self):
+        return self.__str__()
 
     class Meta(object):
         ordering = ['name',]
@@ -204,6 +210,9 @@ class Vehicle(models.Model):
         return base_url + reverse('vehicle-detail', kwargs={'id' : self.pk})
         #return base_url + reverse('vehicle-detail', kwargs={'vin' : self.vin})
 
+    def natural_key(self):
+        return self.full_vehicle_name()
+
     class Meta(object):
         ordering = ['sold', 'vin',]
         verbose_name = 'Vehicle'
@@ -220,13 +229,16 @@ class Seller(AbstractUser):
     vehicles = models.ManyToManyField(
         Vehicle,
         verbose_name = 'Vehicles',
-        related_name = 'vehicles',
-        related_query_name = 'vehicle',
+        related_name = 'vehicle_sellers',
+        related_query_name = 'vehicle_seller',
         blank = True,
     )
 
     def __str__(self):
         return self.username
+
+    def natural_key(self):
+        return self.__str__()
 
     class Meta(object):
         ordering = ['name',]

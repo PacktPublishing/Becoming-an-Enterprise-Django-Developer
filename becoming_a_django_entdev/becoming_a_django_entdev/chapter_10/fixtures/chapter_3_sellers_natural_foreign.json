@@ -1,0 +1,83 @@
+[
+  {
+    "model": "chapter_3.seller",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$ND2TqVsrMvvFsoYfRdBDua$/GFviMELhen6Qk6YxT7C282CewOi9pshNp3WFlACji0=",
+      "last_login": "2021-12-21T01:18:39.905Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "example@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-08-31T05:05:40Z",
+      "name": "Test Biz Name",
+      "groups": [
+      ],
+      "user_permissions": [
+      ],
+      "vehicles": [
+        "Chevrolet Blazer LT - 3.9L DI DOHC 6cyl",
+        "Chevrolet Blazer LT - 3.9L DI DOHC 6cyl",
+        "Chevrolet Blazer LT - 3.9L DI DOHC 6cyl",
+        "Buick Envision Avenir - 3.6L DI DOHC 6cyl",
+        "Buick Enclave Avenir - 3.6L DI DOHC 6cyl",
+        "Chevrolet Blazer LT - 3.9L DI DOHC 6cyl",
+        "Chevrolet Blazer LT - 3.9L DI DOHC 6cyl"
+      ]
+    }
+  },
+  {
+    "model": "chapter_3.seller",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$agUQ6sGdDltFwJNd7Uto7E$g/4+voZU7bsCcHF8p8X4cLupfzD0PoZsjdN9uq0fjPU=",
+      "last_login": "2021-11-07T19:35:52Z",
+      "is_superuser": false,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "testing@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-11-07T19:34:53Z",
+      "name": null,
+      "groups": [
+      ],
+      "user_permissions": [
+        [
+          "view_seller",
+          "chapter_3",
+          "seller"
+        ]
+      ],
+      "vehicles": [
+      ]
+    }
+  },
+  {
+    "model": "chapter_3.seller",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$R7cWJtjKmhFGf4DTvI4NBc$a1BTqlmjLZ2iKeCMW2tF4LYd1KwxeDduKE7iv8nthdA=",
+      "last_login": "2021-12-19T03:17:04.650Z",
+      "is_superuser": true,
+      "username": "superadmin",
+      "first_name": "",
+      "last_name": "",
+      "email": "mike@mikedinder.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-12-03T22:38:45.123Z",
+      "name": null,
+      "groups": [
+      ],
+      "user_permissions": [
+      ],
+      "vehicles": [
+      ]
+    }
+  }
+]

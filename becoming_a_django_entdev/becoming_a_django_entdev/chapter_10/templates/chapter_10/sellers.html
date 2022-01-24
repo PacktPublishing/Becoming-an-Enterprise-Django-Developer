@@ -1,0 +1,83 @@
+{% load static chapter_4 %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>All Sellers Page</title>
+        <style type="text/css">
+            h1 {
+                width: 100%;
+                display: table;
+                margin: 0 auto;
+                border-bottom: 1px solid #000000;
+            }
+
+            h2 {
+                width: auto;
+                display: table;
+                margin: 0 auto;
+                border-bottom: 1px solid #000000;
+            }
+
+            .vehicle-box {
+                width: auto;
+                display: table;
+                margin: 0 auto;
+                padding: 20px 75px;
+                border: 1px dashed #000000;
+            }
+        </style>
+    </head>
+
+    <body style="text-align:center" class="chapter_10">
+        <h1>All Sellers</h1>
+
+        {% if sellers %}
+            {% for seller in sellers %}
+                <p>First Name: {{ seller.first_name }}</p>
+                <p>Last Name: {{ seller.last_name }}</p>
+                <p>Username: {{ seller.username }}</p>
+                <p>Business Name: {{ seller.name }}</p>
+                <p>Email: {{ seller.email }}</p>
+                <p>Last Login: {{ seller.last_login }}</p>
+                <p>Date Joined: {{ seller.date_joined }}</p>
+                <p>Is Staff? {{ seller.is_staff }}</p>
+                <p>Is Active? {{ seller.is_active }}</p>
+                <p>Is Superuser? {{ seller.is_superuser }}</p>
+
+                {% comment %}
+                {#{% if seller.vehicles.all %}
+                    <h2>Seller Vehicles</h2>
+
+                    {% for vehicle in seller.vehicles.all %}
+                        <div class="vehicle-box">
+                            <p>VIN #: {{ vehicle.vin }}</p>
+                            <p>Price: {{ vehicle.price }}</p>
+                            <p>Make: {{ vehicle.make|vehicle_make }}</p>
+                            <p>Model: {{ vehicle.vehicle_model }}</p>
+                            <p>Engine: {{ vehicle.engine }}</p>
+                            <p>Is Sold? {{ vehicle.sold }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}#}
+                {% endcomment %}
+        
+                {% if seller.filtered_vehicles %}
+                    <h2>Seller Vehicles</h2>
+
+                    {% for vehicle in seller.filtered_vehicles %}
+                        <div class="vehicle-box">
+                            <p>VIN #: {{ vehicle.vin }}</p>
+                            <p>Price: {{ vehicle.price }}</p>
+                            <p>Make: {{ vehicle.make|vehicle_make }}</p>
+                            <p>Model: {{ vehicle.vehicle_model }}</p>
+                            <p>Engine: {{ vehicle.engine }}</p>
+                            <p>Is Sold? {{ vehicle.sold }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <br /><hr /><br />
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
