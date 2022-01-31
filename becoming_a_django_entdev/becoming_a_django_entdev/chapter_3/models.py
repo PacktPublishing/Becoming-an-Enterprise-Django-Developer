@@ -71,7 +71,7 @@ class Engine(models.Model):
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
-        related_name = 'engine_model',
+        related_name = 'model_engine',
         blank = True,
         null = True,
     )
@@ -99,7 +99,7 @@ class engine2(models.Model):
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
-        related_name = 'engine2_model',
+        related_name = 'model_engine2',
         blank = True,
         null = True,
     )
@@ -170,7 +170,7 @@ class Vehicle(models.Model):
         Vehicle_Model,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
-        related_name = 'vehicle_model',
+        related_name = 'model_vehicle',
         blank = True,
         null = True,
     )
@@ -178,7 +178,7 @@ class Vehicle(models.Model):
         Engine,
         on_delete = models.CASCADE,
         verbose_name = 'Engine',
-        related_name = 'engine',
+        related_name = 'engine_vehicle',
         blank = True,
         null = True,
     )
