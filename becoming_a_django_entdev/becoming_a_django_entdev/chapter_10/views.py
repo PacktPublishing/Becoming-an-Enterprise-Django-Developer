@@ -12,18 +12,18 @@ class SellersView(View):
 
     def get(self, request, *args, **kwargs):
         try:
-            #sellers = Seller.objects.all() # Produces 19 Queries
+            sellers = Seller.objects.all() # Produces 19 Queries
             #sellers = Seller.objects.prefetch_related('vehicles', 'vehicles__vehicle_model', 'vehicles__engine').all() # Produces 4 Queries (1 for Seller, 1 for Vehicle, 1 for Vehicle_Modle, 1 for Engine)
 
-            sellers = Seller.objects.prefetch_related(
-                Prefetch(
-                    'vehicles',
-                    to_attr  = 'filtered_vehicles',
-                    queryset = Vehicle.objects.filter(vehicle_model__name='Blazer LT')
-                ),
-                'filtered_vehicles__vehicle_model',
-                'filtered_vehicles__engine'
-            ).all() # Produces 4 Queries (1 for Seller, 1 for Vehicle, 1 for Vehicle_Modle, 1 for Engine) and Filters the related Vehicles
+            #sellers = Seller.objects.prefetch_related(
+            #    Prefetch(
+            #        'vehicles',
+            #        to_attr  = 'filtered_vehicles',
+            #        queryset = Vehicle.objects.filter(vehicle_model__name='Blazer LT')
+            #    ),
+            #    'filtered_vehicles__vehicle_model',
+            #    'filtered_vehicles__engine'
+            #).all() # Produces 4 Queries (1 for Seller, 1 for Vehicle, 1 for Vehicle_Modle, 1 for Engine) and Filters the related Vehicles
 
             # Extra-Extra Practice
             #sellers = Seller.objects.prefetch_related('groups', 'user_permissions', 'vehicles', 'vehicles__vehicle_model', 'vehicles__engine').all()
@@ -57,8 +57,8 @@ class VehicleView(View):
 
     def get(self, request, id, *args, **kwargs):
         try:
-            #vehicle = Vehicle.objects.get(id=id) # Produces 3 Queries
-            vehicle = Vehicle.objects.select_related('vehicle_model', 'engine').get(id=id) # Produces 1 Query
+            vehicle = Vehicle.objects.get(id=id) # Produces 3 Queries
+            #vehicle = Vehicle.objects.select_related('vehicle_model', 'engine').get(id=id) # Produces 1 Query
 
         except Vehicle.DoesNotExist:
             raise Http404('Vehicle ID Not Found: %s' % id)
