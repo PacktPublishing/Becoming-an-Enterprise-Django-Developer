@@ -16,7 +16,7 @@ function $gotoSPA_Page() {
 
   // Exercise 3
   // Fetch With Token URL
-  /*var url = `/chapter-8/sellertoken/${id}/`;*/
+/*  var url = `/chapter-8/sellertoken/${id}/`;*/
   
   // Exercise 1
   // Renders as the JSON Example
@@ -25,24 +25,30 @@ function $gotoSPA_Page() {
     headers: {
     'Content-Type': 'application/json',
   }})
-    .then(async(response) => {
-    /*.then(response => {*/
+    .then(response => {
+    /*.then(async(response) => {*/
+      // EXTRA PRACTICE
       /*const html = await response.text();*/
       //const html = response.text();
     
       //console.log(response);
       //console.log(html);
 
+      // EXTRA PRACTICE
       /*container.innerHTML = html;*/
       /*container.innerHTML = JSON.stringify(html);*/
-      /*return res.json();*/
-      return await response.json();
+
+      return response.json();
+      /*return await response.json();*/
     })
-    .then(async(data) => {
-      const thisdata = await data;
-      console.log('Success:', thisdata);
+    .then(data => {
+    /*.then(async(data) => {*/
+      console.log('Success:', data);
+      container.innerHTML = JSON.stringify(data);
+
+      /*const thisdata = await data;*/
       /*container.innerHTML = thisdata;*/
-      container.innerHTML = JSON.stringify(thisdata);
+      /*container.innerHTML = JSON.stringify(thisdata);*/
     });
 
   // Exercise 2

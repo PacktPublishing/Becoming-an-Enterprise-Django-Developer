@@ -1,5 +1,7 @@
 from django.contrib.auth.models import Group, Permission, User
 from django.contrib.contenttypes.models import ContentType
+from django.core import serializers
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.template.response import TemplateResponse
 from django.views.generic import View
@@ -177,7 +179,7 @@ class GetSellerHTMLView(APIView):
 class GetSellerWithTokenView(APIView):
     '''
     This is an AJAX only view.
-    Used to serve up the Seller with the id provided and rendered as preformatted HTML
+    Used to serve up the Seller with the id provided and returned as standard JSON format.
     This also uses an Authentication token that is needed for security measures.
     '''
     #authentication_classes = [TokenAuthentication]
@@ -188,38 +190,44 @@ class GetSellerWithTokenView(APIView):
     def get(self, request, format=None, id=0, *args, **kwargs):
         #print(request.__dict__)
         #print('id = ', id)
-        #print('request.user = ',request.user)
-        #print('request.auth = ', request.auth)
         #print('format = ', format)
-        #print('HTTP_USER = ', request.META['HTTP_USER'])
-        #print('HTTP_AUTHORIZATION = ', request.META['HTTP_AUTHORIZATION'])
+        #print('USER = ', request._user)
+        #print('AUTHORIZATION = ', request._auth)
 
-        req_username = request.META['HTTP_USER']
+        seller = None
+        req_user = request._user
 
-        try:
-            req_user = Seller.objects.get(username=req_username)
-        except Seller.DoesNotExist:
-            #print('REQ USER NOT FOUND')
-            req_user = None
-            seller = None
+        #print(req_user.has_perm('chapter_3.view_seller'))
+
+        if req_user.has_perm('chapter_3.view_seller'):
+            #print('PERMISSION CHECK PERMITTED')
+
+            perm_granted = True
+
+            try:
+                seller = Seller.objects.get(id=id)
+            except Seller.DoesNotExist:
+                #print('SELLER NOT FOUND')
+                pass
         else:
-            if req_user.has_perm('chapter_3.view_seller'):
-                #print('PERM CHECK PERMITTED')
-
-                try:
-                    seller = Seller.objects.get(id=id)
-                except Seller.DoesNotExist:
-                    #print('SELLER NOT FOUND')
-                    seller = None
-            else:
-                #print('PERM CHECK NOT PERMITTED')
-                seller = None
+            #print('PERMISSION CHECK NOT PERMITTED')
+            # Custom Handling of this event here
+            perm_granted = False
 
         context = {
+            'request': request,
             'seller': seller,
         }
 
-        return render(request, self.template_name, context=context)
+        seller = SellerSerializer(seller, context=context) # Must include request in this context
+
+        new_context = {
+            'seller': seller.data,
+            'perm_granted': perm_granted
+        }
+        
+        #return Response(new_context) # Used to show the Browsable API
+        return JsonResponse(new_context) # Will not show the Browsable API
 
     def post(self, request, *args, **kwargs):
         # Not Used In This View
