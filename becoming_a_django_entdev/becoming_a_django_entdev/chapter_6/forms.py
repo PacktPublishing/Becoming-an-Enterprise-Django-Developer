@@ -55,6 +55,7 @@ class SellerForm(ModelForm):
         model = Seller
         fields = '__all__'
 
+
 class SellerSuperUserForm(ModelForm):
     def __init__(self, *args, **kwargs):
         print('SellerSuperUserForm Initialized')

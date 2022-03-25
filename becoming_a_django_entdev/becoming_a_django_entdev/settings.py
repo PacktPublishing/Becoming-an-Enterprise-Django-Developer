@@ -75,35 +75,35 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-INSTALLED_APPS
 DJANGO_APPS = [
     # Add your apps here to enable them
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.admin', # Chapter 6 - Exploring the Django Admin Site
+    'django.contrib.auth', # Chapter 2 - Project Configuration
+    'django.contrib.contenttypes', # Chapter 2 - Project Configuration
     'django.contrib.sessions', # Chapter 7 - Django Messages Framework
     'django.contrib.messages', # Chapter 7 - Django Messages Framework
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', # Chapter 2 - Project Configuration
 ]
 
 THIRD_PARTY_APPS = [
     'debug_toolbar', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
-    'django_extensions',
-    'address',
-    'djmoney',
-    'phone_field',
-    'rest_framework', # Chapter 8 - Django REST Framework
-    'rest_framework.authtoken', # Chapter 8 - Django REST Framework
+    'django_extensions', # Chapter 2 - Project Configuration
+    'address', # Chapter 3 - Django Models
+    'djmoney', # Chapter 3 - Django Models
+    'phone_field', # Chapter 3 - Django Models
+    #'rest_framework', # Chapter 8 - Django REST Framework
+    #'rest_framework.authtoken', # Chapter 8 - Django REST Framework
 ]
 
 LOCAL_APPS = [
     #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well. The reason errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting to now point to the Seller model instead of the default User model. A model in Chapter 1's example points to the original User model, proceed with caution.
-    'becoming_a_django_entdev.chapter_2',
-    'becoming_a_django_entdev.chapter_3',
-    'becoming_a_django_entdev.chapter_4',
-    'becoming_a_django_entdev.chapter_5',
-    'becoming_a_django_entdev.chapter_6',
-    'becoming_a_django_entdev.chapter_7',
-    'becoming_a_django_entdev.chapter_8',
-    'becoming_a_django_entdev.chapter_9',
-    'becoming_a_django_entdev.chapter_10',
+    #'becoming_a_django_entdev.chapter_2',
+    #'becoming_a_django_entdev.chapter_3',
+    #'becoming_a_django_entdev.chapter_4',
+    #'becoming_a_django_entdev.chapter_5',
+    #'becoming_a_django_entdev.chapter_6',
+    #'becoming_a_django_entdev.chapter_7',
+    #'becoming_a_django_entdev.chapter_8',
+    #'becoming_a_django_entdev.chapter_9',
+    #'becoming_a_django_entdev.chapter_10',
 ]
 
 # Chapter 2 - Project Configuration
@@ -193,7 +193,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Chapter 3 - Custom User Model
-AUTH_USER_MODEL = 'chapter_3.Seller'
+#AUTH_USER_MODEL = 'chapter_3.Seller'
 
 # Chapter 2 - Project Configuration
 # Internationalization
@@ -204,7 +204,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Chapter 2 - Project Configuration
+# Chapter 3 - Third Party Field Type
 # Django-Money Field Package
 CURRENCIES = ('USD', 'EUR')
 CURRENCY_CHOICES = [
@@ -284,7 +284,7 @@ django_heroku.settings(locals())
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
-# Chapter 2 - Project Configuration
+# Chapter 2 - Project Configuration - EXTRA PRACTICE - Another way to import settings that can be ignored via a .gitignore setting
 try:
     from .local_settings import *
 except ImportError:

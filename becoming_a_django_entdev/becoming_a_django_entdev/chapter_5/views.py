@@ -199,7 +199,7 @@ class ModelFormClass_UpdateView(UpdateView):
             #    sold = form.instance.sold,
             #    price = form.instance.price,
             #    make = form.instance.make,
-            #    vehicle_model = form.instance.model,
+            #    vehicle_model = form.instance.vehicle_model,
             #    engine = form.instance.engine,
             #)
             #vehicle.save()

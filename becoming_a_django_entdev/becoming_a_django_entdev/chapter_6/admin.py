@@ -58,22 +58,26 @@ class EngineAdmin(admin.ModelAdmin):
 
         return super(EngineAdmin, self).get_form(request, obj, **kwargs)
 
-    def delete_model(self, request, obj, form, change):
+    def delete_model(self, request, obj):
         print(obj.__dict__)
 
+        print('Before Delete')
         # Code actions before delete here
 
-        super().delete_model(request, obj, form, change)
-
+        super().delete_model(request, obj)
+        
+        print('After Delete')
         # Code actions after delete here
 
     def save_model(self, request, obj, form, change):
         print(obj.__dict__)
-
+        
+        print('Before Save')
         # Code actions before save here
 
         super().save_model(request, obj, form, change)
 
+        print('After Save')
         # Code actions after save here
 
 @admin.register(Seller)
@@ -187,18 +191,18 @@ class SellerAdmin(UserAdmin):
     #    models.TextField: {'widget': RichTextEditorWidget},
     #}
 
-    #def get_form(self, request, obj=None, **kwargs):
-    #    if obj:
-    #        print(request.user)
+    def get_form(self, request, obj=None, **kwargs):
+        if obj:
+            print(request.user)
 
-    #        if request.user.is_superuser:
-    #            return SellerSuperUserForm
-    #        else:
-    #            return SellerForm
-    #    else:
-    #        return AddSellerForm
+            if request.user.is_superuser:
+                return SellerSuperUserForm
+            else:
+                return SellerForm
+        else:
+            return AddSellerForm
 
-    #    return super(SellerAdmin, self).get_form(request, obj, **kwargs)
+        return super(SellerAdmin, self).get_form(request, obj, **kwargs)
 
 
 @admin.register(Vehicle)
