@@ -1,0 +1,549 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>becoming_a_django_entdev</Name>
+    <RootNamespace>becoming_a_django_entdev</RootNamespace>
+    <InterpreterId>MSBuild|virtual_env|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>8000</WebBrowserPort>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <TestFramework>unittest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f5da6333-34c1-4e42-adc1-9a240b16ffbe</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>becoming_a_django_entdev.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="becoming_a_django_entdev\asgi.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_10\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_1\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_2\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\converters.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\templatetags\chapter_4.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_4\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\fields.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\forms.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\templatetags\chapter_5.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_5\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\forms.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_6\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\fields.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\forms.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\templatetags\chapter_7.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_7\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\serializers.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_8\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\admin.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\apps.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\migrations\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\tests.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\urls.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\views.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_9\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\context_processors.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="becoming_a_django_entdev\local_settings-boilerplate.py" />
+    <Compile Include="becoming_a_django_entdev\local_settings.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="becoming_a_django_entdev\__init__.py" />
+    <Compile Include="becoming_a_django_entdev\settings.py" />
+    <Compile Include="becoming_a_django_entdev\urls.py" />
+    <Compile Include="becoming_a_django_entdev\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".env" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10.jsonl" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10.xml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10.yaml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10_exclude.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10_natural_both.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10_natural_foreign.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_10_natural_primary.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models.jsonl" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models.xml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models.yaml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models_natural_both.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models_natural_foreign.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_models_natural_primary.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers.jsonl" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers.xml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers.yaml" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers_natural_both.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers_natural_foreign.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\fixtures\chapter_3_sellers_natural_primary.json" />
+    <Content Include="becoming_a_django_entdev\chapter_10\readme.md" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\chapter_10\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\chapter_10\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\chapter_10\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\chapter_10\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\chapter_10\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_10\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_10\templates\chapter_10\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_10\templates\chapter_10\sellers.html" />
+    <Content Include="becoming_a_django_entdev\chapter_10\templates\chapter_10\vehicles.html" />
+    <Content Include="becoming_a_django_entdev\chapter_10\templates\chapter_10\vehicle.html" />
+    <Content Include="becoming_a_django_entdev\chapter_1\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_1\readme.md" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\chapter_1\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\chapter_1\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\chapter_1\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\chapter_1\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\chapter_1\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_1\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_1\templates\chapter_1\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_1\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_1\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_1\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_1\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_2\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\chapter_2\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\chapter_2\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\chapter_2\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\chapter_2\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\chapter_2\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_2\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_2\templates\chapter_2\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_2\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_2\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_2\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_2\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\fixtures\chapter_3.json" />
+    <Content Include="becoming_a_django_entdev\chapter_3\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\chapter_3\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\chapter_3\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\chapter_3\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\chapter_3\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\chapter_3\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_3\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_3\templates\chapter_3\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\models.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_3\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\chapter_4\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\chapter_4\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\chapter_4\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\chapter_4\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\chapter_4\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_4\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\400.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\403.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\404.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\500.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\base_error.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\base\base_template_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\chapter_4.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\footers\footer_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\headers\header_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\my_practice_page.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\my_vehicle.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\my_vehicle_class_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\my_vehicle_class_2.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\my_year.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\pages\test_page_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templatetags\__pycache__\chapter_4.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\templatetags\__pycache__\chapter_4.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\models.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\views.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\views.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_4\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\chapter_5\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\chapter_5\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\chapter_5\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\chapter_5\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\chapter_5\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_5\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\base\base_template_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\contact-success.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\fields\input_field.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\fields\textarea_field.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\footers\footer_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\form-class.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\forms\custom-model-form.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\forms\custom-form.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\headers\header_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\model-form-class.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\vehicle-success.html" />
+    <Content Include="becoming_a_django_entdev\chapter_5\templatetags\__pycache__\chapter_5.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\fields.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\fields.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\forms.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\forms.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\models.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\urls.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\views.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\views.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_5\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\chapter_6\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\chapter_6\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\chapter_6\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\chapter_6\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\chapter_6\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_6\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\base\base_template_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\footers\footer_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\headers\header_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\forms.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\urls.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\views.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_6\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\pdf\example.pdf" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\pdf\test.pdf" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\chapter_7\pdf\test_2.pdf" />
+    <Content Include="becoming_a_django_entdev\chapter_7\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\base\base_template_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\contact-success.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\emails\html_format.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\emails\new_contact_form_entry.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\emails\plain_text_format.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\fields\input_field.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\fields\textarea_field.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\footers\footer_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\form-class.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\headers\header_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\model-form-class.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\pdfs\pdf_template.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\vehicle-success.html" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templatetags\__pycache__\chapter_5.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\templatetags\__pycache__\chapter_7.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\fields.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\forms.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\urls.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\views.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_7\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\fixtures\chapter_8.json" />
+    <Content Include="becoming_a_django_entdev\chapter_8\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\chapter_8\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\chapter_8\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\chapter_8\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\chapter_8\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\chapter_8\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_8\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\base\base_template_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\details\seller.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\footers\footer_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\headers\header_1.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\index.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\spa_pages\get_seller.html" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\models.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\serializers.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\urls.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\views.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_8\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\chapter_9\css\site.css" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\chapter_9\css\site.min.css" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\chapter_9\home_page.jpg" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\chapter_9\js\site-js.js" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\chapter_9\js\site-js.min.js" />
+    <Content Include="becoming_a_django_entdev\chapter_9\static\favicon.ico" />
+    <Content Include="becoming_a_django_entdev\chapter_9\templates\chapter_9\index.html" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="becoming_a_django_entdev\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\fixtures\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\static\chapter_10\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\static\chapter_10\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\static\chapter_10\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_10\templates\chapter_10\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\static\chapter_1\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\static\chapter_1\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\static\chapter_1\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\templates\chapter_1\" />
+    <Folder Include="becoming_a_django_entdev\chapter_1\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\static\chapter_2\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\static\chapter_2\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\static\chapter_2\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\templates\chapter_2\" />
+    <Folder Include="becoming_a_django_entdev\chapter_2\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\fixtures\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\static\chapter_3\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\static\chapter_3\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\static\chapter_3\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\templates\chapter_3\" />
+    <Folder Include="becoming_a_django_entdev\chapter_3\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\static\chapter_4\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\static\chapter_4\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\static\chapter_4\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\base\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\footers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\headers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templates\chapter_4\pages\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templatetags\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\templatetags\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_4\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\static\chapter_5\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\static\chapter_5\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\static\chapter_5\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\base\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\fields\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\footers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\headers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templates\chapter_5\forms\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templatetags\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\templatetags\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_5\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\static\chapter_6\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\static\chapter_6\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\static\chapter_6\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\base\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\footers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\templates\chapter_6\headers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_6\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\static\chapter_7\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\static\chapter_7\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\static\chapter_7\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\static\chapter_7\pdf\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\base\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\emails\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\fields\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\footers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\headers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templates\chapter_7\pdfs\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templatetags\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\templatetags\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_7\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\fixtures\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\migrations\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\static\chapter_8\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\static\chapter_8\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\static\chapter_8\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\base\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\details\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\footers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\headers\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\templates\chapter_8\spa_pages\" />
+    <Folder Include="becoming_a_django_entdev\chapter_8\__pycache__\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\migrations\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\static\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\static\chapter_9\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\static\chapter_9\css\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\static\chapter_9\js\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\templates\" />
+    <Folder Include="becoming_a_django_entdev\chapter_9\templates\chapter_9\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="virtual_env\">
+      <Id>virtual_env</Id>
+      <Version>3.9</Version>
+      <Description>virtual_env (Python 3.9)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

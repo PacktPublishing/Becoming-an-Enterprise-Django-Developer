@@ -27,7 +27,6 @@ virtual_env/
 
 # Visual Studio and Visual Studio Code #
 *.suo
-*.pyproj
 *.pyproj.user
 *.history
 .vs/
