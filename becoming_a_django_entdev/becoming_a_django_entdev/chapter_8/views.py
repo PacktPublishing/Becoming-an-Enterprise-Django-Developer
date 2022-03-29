@@ -12,7 +12,7 @@ from rest_framework.authentication import BasicAuthentication, SessionAuthentica
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import EngineSerializer, SellerSerializer, VehicleSerializer, Vehicle_ModelSerializer, GroupSerializer, PermissionSerializer, ContentTypeSerializer
+from .serializers import EngineSerializer, SellerSerializer, VehicleSerializer, Vehicle_ModelSerializer #, GroupSerializer, PermissionSerializer, ContentTypeSerializer
 #from .serializers import UserSerializer
 from ..chapter_3.models import Engine, Seller, Vehicle, Vehicle_Model
 
@@ -74,39 +74,39 @@ class SellerViewSet(ModelViewSet):
 
 
 # Optional View - Needed if you are logged in with a user/seller who has Group or Permission related objects.
-class GroupViewSet(ModelViewSet):
-    '''
-    API endpoint that allows Group to be viewed or edited.
-    '''
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = [
-        IsAuthenticated
-    ]
+#class GroupViewSet(ModelViewSet):
+#    '''
+#    API endpoint that allows Group to be viewed or edited.
+#    '''
+#    queryset = Group.objects.all()
+#    serializer_class = GroupSerializer
+#    permission_classes = [
+#        IsAuthenticated
+#    ]
 
 
-# Optional View - Needed if you are logged in with a user/seller who has Group or Permission related objects.
-class PermissionViewSet(ModelViewSet):
-    '''
-    API endpoint that allows Permission to be viewed or edited.
-    '''
-    queryset = Permission.objects.all()
-    serializer_class = PermissionSerializer
-    permission_classes = [
-        IsAuthenticated
-    ]
+## Optional View - Needed if you are logged in with a user/seller who has Group or Permission related objects.
+#class PermissionViewSet(ModelViewSet):
+#    '''
+#    API endpoint that allows Permission to be viewed or edited.
+#    '''
+#    queryset = Permission.objects.all()
+#    serializer_class = PermissionSerializer
+#    permission_classes = [
+#        IsAuthenticated
+#    ]
 
 
-# Optional View - Needed if you are logged in with a user/seller who has Group or Permission related objects and the user/seller serializer has a Meta depth property >= 2
-class ContentTypeViewSet(ModelViewSet):
-    '''
-    API endpoint that allows ContentType to be viewed or edited.
-    '''
-    queryset = ContentType.objects.all()
-    serializer_class = ContentTypeSerializer
-    permission_classes = [
-        IsAuthenticated
-    ]
+## Optional View - Needed if you are logged in with a user/seller who has Group or Permission related objects and the user/seller serializer has a Meta depth property >= 2
+#class ContentTypeViewSet(ModelViewSet):
+#    '''
+#    API endpoint that allows ContentType to be viewed or edited.
+#    '''
+#    queryset = ContentType.objects.all()
+#    serializer_class = ContentTypeSerializer
+#    permission_classes = [
+#        IsAuthenticated
+#    ]
 
 
 class HelloWorldView(APIView):
@@ -122,9 +122,10 @@ class GetSellerView(View):
     template_name = 'chapter_8/spa_pages/get_seller.html'
 
     def get(self, request, *args, **kwargs):
-        context = {
-            'custom_message': 'Extra Context Goes Here'
-        }
+        context = {}
+        #context = {
+        #    'custom_message': 'Extra Context Goes Here'
+        #}
 
         #print(context)
 
@@ -185,7 +186,7 @@ class GetSellerWithTokenView(APIView):
     #authentication_classes = [TokenAuthentication]
     #permission_classes = [IsAdminUser]
     permission_classes = [IsAuthenticated]
-    template_name = 'chapter_8/details/seller.html'
+    #template_name = 'chapter_8/details/seller.html'
 
     def get(self, request, format=None, id=0, *args, **kwargs):
         #print(request.__dict__)

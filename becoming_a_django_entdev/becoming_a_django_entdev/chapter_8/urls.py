@@ -24,9 +24,9 @@ from .views import (
     SellerViewSet,
     VehicleViewSet,
     Vehicle_ModelViewSet,
-    GroupViewSet,
-    PermissionViewSet,
-    ContentTypeViewSet,
+    #GroupViewSet,
+    #PermissionViewSet,
+    #ContentTypeViewSet,
     GetSellerView,
     GetSellerHTMLView,
     GetSellerWithTokenView
@@ -41,9 +41,9 @@ router.register(r'sellers', SellerViewSet)
 router.register(r'vehicles', VehicleViewSet)
 router.register(r'vehicle-models', Vehicle_ModelViewSet)
 #router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
-router.register(r'permissions', PermissionViewSet)
-router.register(r'content-types', ContentTypeViewSet)
+#router.register(r'groups', GroupViewSet)
+#router.register(r'permissions', PermissionViewSet)
+#router.register(r'content-types', ContentTypeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

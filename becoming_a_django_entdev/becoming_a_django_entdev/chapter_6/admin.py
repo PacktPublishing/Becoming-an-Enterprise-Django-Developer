@@ -191,18 +191,18 @@ class SellerAdmin(UserAdmin):
     #    models.TextField: {'widget': RichTextEditorWidget},
     #}
 
-    def get_form(self, request, obj=None, **kwargs):
-        if obj:
-            print(request.user)
+    #def get_form(self, request, obj=None, **kwargs):
+    #    if obj:
+    #        print(request.user)
 
-            if request.user.is_superuser:
-                return SellerSuperUserForm
-            else:
-                return SellerForm
-        else:
-            return AddSellerForm
+    #        if request.user.is_superuser:
+    #            return SellerSuperUserForm
+    #        else:
+    #            return SellerForm
+    #    else:
+    #        return AddSellerForm
 
-        return super(SellerAdmin, self).get_form(request, obj, **kwargs)
+    #    return super(SellerAdmin, self).get_form(request, obj, **kwargs)
 
 
 @admin.register(Vehicle)
