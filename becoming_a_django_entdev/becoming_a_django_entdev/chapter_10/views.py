@@ -6,7 +6,6 @@ from django.views.generic import View
 from ..chapter_3.models import Seller, Vehicle
 
 
-# Extra Practice
 class SellersView(View):
     template_name = 'chapter_10/sellers.html'
 

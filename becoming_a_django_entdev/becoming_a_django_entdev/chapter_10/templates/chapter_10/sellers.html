@@ -44,8 +44,7 @@
                 <p>Is Active? {{ seller.is_active }}</p>
                 <p>Is Superuser? {{ seller.is_superuser }}</p>
 
-                {% comment %}
-                {#{% if seller.vehicles.all %}
+                {% if seller.vehicles.all %}
                     <h2>Seller Vehicles</h2>
 
                     {% for vehicle in seller.vehicles.all %}
@@ -58,10 +57,10 @@
                             <p>Is Sold? {{ vehicle.sold }}</p>
                         </div>
                     {% endfor %}
-                {% endif %}#}
-                {% endcomment %}
-        
-                {% if seller.filtered_vehicles %}
+                {% endif %}
+
+                {% comment %}
+                {#{% if seller.filtered_vehicles %}
                     <h2>Seller Vehicles</h2>
 
                     {% for vehicle in seller.filtered_vehicles %}
@@ -74,7 +73,8 @@
                             <p>Is Sold? {{ vehicle.sold }}</p>
                         </div>
                     {% endfor %}
-                {% endif %}
+                {% endif %}#}
+                {% endcomment %}
 
                 <br /><hr /><br />
             {% endfor %}
