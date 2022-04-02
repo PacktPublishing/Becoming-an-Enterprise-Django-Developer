@@ -74,9 +74,9 @@ urlpatterns = urlpatterns + [
 # END - CHAPTER 9 #
 
 # CHAPTER 10 - Uncomment for Chapter 10 Only, Comment Out For All Other Chapters #
-#urlpatterns = urlpatterns + [
-#    path('', include('becoming_a_django_entdev.chapter_10.urls')),
-#]
+urlpatterns = urlpatterns + [
+    path('', include('becoming_a_django_entdev.chapter_10.urls')),
+]
 # END - CHAPTER 10 #
 
 # CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all chapters to allow the writer and the testers to use it and make sure things are working properly but this tool is not revealed to the reader until Chapter 9

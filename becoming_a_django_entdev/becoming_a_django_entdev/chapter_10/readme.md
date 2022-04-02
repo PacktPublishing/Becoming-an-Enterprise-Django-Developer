@@ -29,16 +29,6 @@ Run the following commands to produce the results specified in the Description c
 | Dump Everything From Every Table and Every App - As YAML | `python manage.py dumpdata --format yaml -o becoming_a_django_entdev/chapter_10/fixtures/chapter_10.yaml` |
 | Dump All of chapter_3 App Models - As YAML | `python manage.py dumpdata chapter_3 --format yaml -o becoming_a_django_entdev/chapter_10/fixtures/chapter_3_models.yaml` |
 | Dump Only the chapter_3 Seller Model - As YAML | `python manage.py dumpdata chapter_3.seller --format yaml -o becoming_a_django_entdev/chapter_10/fixtures/chapter_3_sellers.yaml` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
-|  | `` |
 
 ---
 

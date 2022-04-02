@@ -84,7 +84,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'debug_toolbar', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
+    #'debug_toolbar', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
     'django_extensions', # Chapter 2 - Project Configuration
     'address', # Chapter 3 - Django Models
     'djmoney', # Chapter 3 - Django Models
@@ -92,6 +92,9 @@ THIRD_PARTY_APPS = [
     #'rest_framework', # Chapter 8 - Django REST Framework
     #'rest_framework.authtoken', # Chapter 8 - Django REST Framework
 ]
+
+if DEBUG:
+    THIRD_PARTY_APPS[0] = 'debug_toolbar' # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
 
 LOCAL_APPS = [
     #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well. The reason errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting to now point to the Seller model instead of the default User model. A model in Chapter 1's example points to the original User model, proceed with caution.
@@ -114,7 +117,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # Middleware Framework
 # https://docs.djangoproject.com/en/3.2/topics/http/middleware/
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Chapter 7 - Django Messages Framework
@@ -124,6 +127,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware', # Chapter 7 - Django Messages Framework
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DEBUG:
+    MIDDLEWARE[0] = 'debug_toolbar.middleware.DebugToolbarMiddleware' # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
 
 # Chapter 2 - Project Configuration
 ROOT_URLCONF = 'becoming_a_django_entdev.urls'
