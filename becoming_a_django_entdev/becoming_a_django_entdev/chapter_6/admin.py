@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import ModelAdmin, StackedInline, TabularInline
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import (
@@ -12,34 +13,34 @@ from .forms import (
 from ..chapter_3.models import Engine, Seller, Vehicle, Vehicle_Model
 
 
-#class EngineInline(admin.TabularInline):
-class EngineInline(admin.StackedInline):
+#class EngineInline(TabularInline):
+class EngineInline(StackedInline):
     model = Engine
     extra = 1
 
-class Vehicle_ModelInline(admin.TabularInline):
-#class Vehicle_ModelInline(admin.StackedInline):
+class Vehicle_ModelInline(TabularInline):
+#class Vehicle_ModelInline(StackedInline):
     model = Vehicle_Model
     extra = 1
 
-class SellerInline(admin.TabularInline):
-#class SellerInline(admin.StackedInline):
+class SellerInline(TabularInline):
+#class SellerInline(StackedInline):
     model = Seller
     extra = 1
 
-class VehicleInline(admin.TabularInline):
-#class VehicleInline(admin.StackedInline):
+class VehicleInline(TabularInline):
+#class VehicleInline(StackedInline):
     model = Vehicle
     extra = 1
 
-class VehiclesInline(admin.TabularInline):
-#class VehiclesInline(admin.StackedInline):
+class VehiclesInline(TabularInline):
+#class VehiclesInline(StackedInline):
     model = Seller.vehicles.through
     extra = 1
 
 
 @admin.register(Engine)
-class EngineAdmin(admin.ModelAdmin):
+class EngineAdmin(ModelAdmin):
     #pass
 
     #form = EngineForm
@@ -81,7 +82,7 @@ class EngineAdmin(admin.ModelAdmin):
         # Code actions after save here
 
 @admin.register(Seller)
-#class SellerAdmin(admin.ModelAdmin):
+#class SellerAdmin(ModelAdmin):
 class SellerAdmin(UserAdmin):
     #pass
 
@@ -206,13 +207,13 @@ class SellerAdmin(UserAdmin):
 
 
 @admin.register(Vehicle)
-class VehicleAdmin(admin.ModelAdmin):
+class VehicleAdmin(ModelAdmin):
     #pass
     #radio_fields = {'engine': admin.VERTICAL}
     radio_fields = {'engine': admin.HORIZONTAL}
 
 @admin.register(Vehicle_Model)
-class Vehicle_ModelAdmin(admin.ModelAdmin):
+class Vehicle_ModelAdmin(ModelAdmin):
     #pass
     inlines = [VehicleInline,]
 
