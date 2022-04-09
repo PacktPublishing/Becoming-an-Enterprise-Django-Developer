@@ -49,7 +49,7 @@ class TestingCalibrator(SimpleTestCase):
         self.assertFalse(True)
 
 
-#class Model_UnitTestCase(TestCase):
+#class ModelUnitTestCase(TestCase):
 #    '''
 #    Django Unit Test Case
 #    Used to test smallest components of Django
@@ -94,7 +94,7 @@ class TestingCalibrator(SimpleTestCase):
 #        #print('vehicle_2 = %s' % vehicle_2.full_vehicle_name())
 
 
-#class Year_RequestTestCase(TestCase):
+#class YearRequestTestCase(TestCase):
 #    '''
 #    Django Request Test Case
 #    Used to test Django method-based views
@@ -120,7 +120,7 @@ class TestingCalibrator(SimpleTestCase):
 #        self.assertEqual(response.status_code, 200)
 
 
-#class Vehicle_RequestTestCase(TestCase):
+#class VehicleRequestTestCase(TestCase):
 #    '''
 #    Django Request Test Case
 #    Used to test Django class-based views
@@ -148,7 +148,7 @@ class TestingCalibrator(SimpleTestCase):
 #        self.assertEqual(response.status_code, 200)
 
 
-#class Seller_ClientTestCase(TestCase):
+#class SellerClientTestCase(TestCase):
 #    '''
 #    Django Client/Request Test Case
 #    Used to test custom REST-API Endpoints
@@ -177,7 +177,7 @@ class TestingCalibrator(SimpleTestCase):
 #        #self.assertEqual(seller.name, 'Test Biz Name1') # Incorrect Value
 
 
-#class Engine_APITestCase(APITestCase):
+#class EngineAPITestCase(APITestCase):
 #    '''
 #    Django Client/Request Test Case
 #    Used to test custom REST-API Endpoints

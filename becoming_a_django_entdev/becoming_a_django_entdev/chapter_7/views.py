@@ -14,7 +14,7 @@ from .forms import ContactForm, VehicleForm, ProspectiveBuyerForm, ProspectiveBu
 from ..chapter_3.models import Seller, Vehicle, Engine, Vehicle_Model
 
 
-class FormClass_View(FormView):
+class FormClassView(FormView):
     template_name = 'chapter_7/form-class.html'
     form_class = ContactForm
     success_url = '/chapter-7/contact-form-success/'
@@ -37,10 +37,10 @@ class FormClass_View(FormView):
         }
 
         return TemplateResponse(request, self.template_name, {
-            'title': 'FormClass_View Page',
+            'title': 'FormClassView Page',
             'page_id': 'form-class-id',
             'page_class': 'form-class-page',
-            'h1_tag': 'This is the FormClass_View Page Using ContactForm',
+            'h1_tag': 'This is the FormClassView Page Using ContactForm',
             'form': self.form_class(initial),
         })
 
@@ -59,10 +59,10 @@ class FormClass_View(FormView):
             #return HttpResponseRedirect(self.success_url)
 
             context = {
-                'title': 'FormClass_View Page',
+                'title': 'FormClassView Page',
                 'page_id': 'form-class-id',
                 'page_class': 'form-class-page',
-                'h1_tag': 'This is the FormClass_View Page Using ContactForm',
+                'h1_tag': 'This is the FormClassView Page Using ContactForm',
                 'form': form,
             }
         else:
@@ -70,10 +70,10 @@ class FormClass_View(FormView):
             #messages.error(request, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
 
             context = {
-                'title': 'FormClass_View Page - Please Correct The Errors Below',
+                'title': 'FormClassView Page - Please Correct The Errors Below',
                 'page_id': 'form-class-id',
                 'page_class': 'form-class-page errors-found',
-                'h1_tag': 'This is the FormClass_View Page Using ContactForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the FormClassView Page Using ContactForm<br /><small class="error-msg">Errors Found</small>',
                 'form': form,
             }
 
@@ -93,7 +93,7 @@ class FormClass_View(FormView):
         return super().form_valid(form)
 
 
-class ModelFormClass_CreateView(CreateView):
+class ModelFormClassCreateView(CreateView):
     template_name = 'chapter_7/model-form-class.html'
     form_class = VehicleForm
     success_url = '/chapter-7/vehicle-form-success/'
@@ -118,10 +118,10 @@ class ModelFormClass_CreateView(CreateView):
         #    buyer_formset = ProspectiveBuyerFormSet()
 
         return TemplateResponse(request, self.template_name, {
-            'title': 'ModelFormClass_CreateView Page',
+            'title': 'ModelFormClassCreateView Page',
             'page_id': 'model-form-class-id',
             'page_class': 'model-form-class-page',
-            'h1_tag': 'This is the ModelFormClass_CreateView Class Page Using VehicleForm',
+            'h1_tag': 'This is the ModelFormClassCreateView Class Page Using VehicleForm',
             'form': self.form_class(),
             'buyer_formset': buyer_formset,
         })
@@ -154,10 +154,10 @@ class ModelFormClass_CreateView(CreateView):
             return HttpResponseRedirect(self.success_url)
         else:
             return TemplateResponse(request, self.template_name, {
-                'title': 'ModelFormClass_CreateView Page - Please Correct The Errors Below',
+                'title': 'ModelFormClassCreateView Page - Please Correct The Errors Below',
                 'page_id': 'model-form-class-id',
                 'page_class': 'model-form-class-page errors-found',
-                'h1_tag': 'This is the ModelFormClass_CreateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the ModelFormClassCreateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
                 'form': form,
                 'buyer_formset': buyer_formset,
             })
@@ -173,7 +173,7 @@ class ModelFormClass_CreateView(CreateView):
         return super().form_valid(form)
 
 
-class ModelFormClass_UpdateView(UpdateView):
+class ModelFormClassUpdateView(UpdateView):
     template_name = 'chapter_7/model-form-class.html'
     form_class = VehicleForm
     success_url = '/chapter-7/vehicle-form-success/'
@@ -193,10 +193,10 @@ class ModelFormClass_UpdateView(UpdateView):
         #buyer_formset = ProspectiveBuyerFormSet()
 
         return TemplateResponse(request, self.template_name, {
-            'title': 'ModelFormClass_UpdateView Page',
+            'title': 'ModelFormClassUpdateView Page',
             'page_id': 'model-form-class-id',
             'page_class': 'model-form-class-page',
-            'h1_tag': 'This is the ModelFormClass_UpdateView Class Page Using VehicleForm',
+            'h1_tag': 'This is the ModelFormClassUpdateView Class Page Using VehicleForm',
             'form': form,
             #'buyer_formset': buyer_formset,
         })
@@ -229,10 +229,10 @@ class ModelFormClass_UpdateView(UpdateView):
             return HttpResponseRedirect(self.success_url)
         else:
             return TemplateResponse(request, self.template_name, {
-                'title': 'ModelFormClass_UpdateView Page - Please Correct The Errors Below',
+                'title': 'ModelFormClassUpdateView Page - Please Correct The Errors Below',
                 'page_id': 'model-form-class-id',
                 'page_class': 'model-form-class-page errors-found',
-                'h1_tag': 'This is the ModelFormClass_UpdateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the ModelFormClassUpdateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
                 'form': form,
                 #'buyer_formset': buyer_formset,
             })
