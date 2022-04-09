@@ -10,7 +10,7 @@ local_settings.py
 
 # Static and Media - Never Changing Static Assets and User Generated Content #
 staticfiles/
-
+media/
 
 # This Project Specific Media
 !media/media.jpg
