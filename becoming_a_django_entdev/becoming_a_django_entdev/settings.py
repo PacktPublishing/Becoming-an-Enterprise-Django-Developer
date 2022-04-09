@@ -34,11 +34,15 @@ if os.path.isfile(dotenv_file):
 
 # Chapter 2 - Project Configuration
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'e8a4a113-8637-41f4-be33-5c707fc9b3fc'
+#SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Chapter 2 - Project Configuration
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = True
+#DEBUG = False
+#DEBUG = os.getenv('DEBUG')
+
 
 # Chapter 2 - Project Configuration
 INTERNAL_IPS = [
@@ -148,7 +152,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages', # Chapter 7 - Django Messages Framework
-                'becoming_a_django_entdev.context_processors.global_context',
+                #'becoming_a_django_entdev.context_processors.global_context', # Chapter 4 - URLs, Views, and Templates
             ],
         },
     },

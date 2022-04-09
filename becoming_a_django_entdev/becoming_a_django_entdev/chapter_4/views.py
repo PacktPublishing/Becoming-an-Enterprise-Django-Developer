@@ -106,7 +106,7 @@ class VehicleView2(VehicleView):
     #    return HttpResponseRedirect('/success/')
 
 
-class TestPage_View(View):
+class TestPageView(View):
     template_name = 'chapter_4/pages/test_page_1.html'
 
     def get(self, request, *args, **kwargs):

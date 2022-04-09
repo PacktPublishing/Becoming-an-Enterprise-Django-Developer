@@ -20,7 +20,7 @@ from django.urls import include, path, re_path, register_converter
 from django.views.generic import TemplateView, RedirectView
 
 from .converters import YearConverter
-from .views import TestPage_View, VehicleView, VehicleView2, practice_year_view, practice_view, vehicle_view
+from .views import TestPageView, VehicleView, VehicleView2, practice_year_view, practice_view, vehicle_view
 
 
 register_converter(YearConverter, 'year')
@@ -49,6 +49,6 @@ urlpatterns = [
     #path('vehicle/<int:id>/', VehicleView.as_view(), name='vehicle-detail'),
     #path('vehicle/<int:id>/', VehicleView.as_view(template_name='chapter_4/my_vehicle_class_2.html'), name='vehicle-detail'),
     #path('vehicle/<int:id>/', VehicleView2.as_view(), name='vehicle-detail'),
-    path('test_page_1/', TestPage_View.as_view(), name='test-page'),
+    #path('test_page_1/', TestPageView.as_view(), name='test-page'),
     #path('vehicle/', VehicleView.as_view(), name='vehicle-detail'),
 ]
