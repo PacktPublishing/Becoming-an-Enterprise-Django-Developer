@@ -1,20 +1,46 @@
-from django.conf import settings
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
+''' Chapter 7 Views Module '''
+#from django.conf import settings
+from django.core.exceptions import (
+    #ValidationError,
+    ObjectDoesNotExist
+)
 from django.contrib import messages
-from django.forms import formset_factory, inlineformset_factory
-from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+#from django.forms import formset_factory, inlineformset_factory
+from django.http import (
+    #Http404,
+    #HttpResponse,
+    HttpResponseRedirect
+)
+#from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
-from django.urls import reverse
-from django.views.generic import View
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
+#from django.urls import reverse
+#from django.views.generic import View
+from django.views.generic.edit import (
+    FormView,
+    CreateView,
+    UpdateView,
+    #DeleteView
+)
 
 
-from .forms import ContactForm, VehicleForm, ProspectiveBuyerForm, ProspectiveBuyerFormSet
-from ..chapter_3.models import Seller, Vehicle, Engine, Vehicle_Model
+from .forms import (
+    ContactForm,
+    VehicleForm,
+    #ProspectiveBuyerForm,
+    ProspectiveBuyerFormSet
+)
+from ..chapter_3.models import (
+    #Seller,
+    Vehicle,
+    #Engine,
+    #VehicleModel
+)
 
 
 class FormClassView(FormView):
+    '''
+    Form View for ContactForm
+    '''
     template_name = 'chapter_7/form-class.html'
     form_class = ContactForm
     success_url = '/chapter-7/contact-form-success/'
@@ -52,9 +78,24 @@ class FormClassView(FormView):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            messages.add_message(request, messages.SUCCESS, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
-            #messages.success(request, 'Your contact form submitted successfully', extra_tags='bold', fail_silently=True)
-            #messages.add_message(request, settings.CRITICAL, 'This is critical!')
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Your contact form submitted successfully',
+                extra_tags = 'bold',
+                fail_silently = True
+            )
+            #messages.success(
+            #    request,
+            #    'Your contact form submitted successfully',
+            #    extra_tags = 'bold',
+            #    fail_silently = True
+            #)
+            #messages.add_message(
+            #    request,
+            #    settings.CRITICAL,
+            #    'This is critical!'
+            #)
 
             #return HttpResponseRedirect(self.success_url)
 
@@ -66,14 +107,26 @@ class FormClassView(FormView):
                 'form': form,
             }
         else:
-            messages.add_message(request, messages.ERROR, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
-            #messages.error(request, 'There was a problem submitting your contact form.<br />Please review the highlighted fields below.', fail_silently=True)
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'There was a problem submitting your contact form.<br />Please review the ' \
+                    'highlighted fields below.',
+                fail_silently = True
+            )
+            #messages.error(
+            #    request,
+            #    'There was a problem submitting your contact form.<br />Please review the ' \
+            #        'highlighted fields below.',
+            #    fail_silently = True
+            #)
 
             context = {
                 'title': 'FormClassView Page - Please Correct The Errors Below',
                 'page_id': 'form-class-id',
                 'page_class': 'form-class-page errors-found',
-                'h1_tag': 'This is the FormClassView Page Using ContactForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the FormClassView Page Using ContactForm<br /><small ' \
+                    'class="error-msg">Errors Found</small>',
                 'form': form,
             }
 
@@ -88,12 +141,17 @@ class FormClassView(FormView):
         It should return an HttpResponse.
         '''
 
-        # Perform Additional Actions, such as sending an email or custom business logic validation checking.
+        # Perform Additional Actions, such as sending an email or custom business logic
+        # validation checking.
         #form.send_email()
+
         return super().form_valid(form)
 
 
 class ModelFormClassCreateView(CreateView):
+    '''
+    Form View for VehicleForm - Create View
+    '''
     template_name = 'chapter_7/model-form-class.html'
     form_class = VehicleForm
     success_url = '/chapter-7/vehicle-form-success/'
@@ -106,7 +164,8 @@ class ModelFormClassCreateView(CreateView):
         # For use with Inline Formset Exercise
         buyer_formset = ProspectiveBuyerFormSet()
 
-        # Determine Number of Inlines by querystring localhost:8000/chapter-7/model-form-class?forms=3
+        # Determine Number of Inlines by querystring
+        # Such as localhost:8000/chapter-7/model-form-class?forms=3
         #if 'forms' in request.GET:
         #    num = int(request.GET.get('forms', '1'))
 
@@ -157,7 +216,8 @@ class ModelFormClassCreateView(CreateView):
                 'title': 'ModelFormClassCreateView Page - Please Correct The Errors Below',
                 'page_id': 'model-form-class-id',
                 'page_class': 'model-form-class-page errors-found',
-                'h1_tag': 'This is the ModelFormClassCreateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the ModelFormClassCreateView Page Using VehicleForm<br />' \
+                    '<small class="error-msg">Errors Found</small>',
                 'form': form,
                 'buyer_formset': buyer_formset,
             })
@@ -168,12 +228,17 @@ class ModelFormClassCreateView(CreateView):
         It should return an HttpResponse.
         '''
 
-        # Perform Additional Actions, such as sending an email or custom business logic validation checking.
+        # Perform Additional Actions, such as sending an email or custom business logic
+        # validation checking.
         #form.send_email()
+
         return super().form_valid(form)
 
 
 class ModelFormClassUpdateView(UpdateView):
+    '''
+    Form View for VehicleForm - Update View
+    '''
     template_name = 'chapter_7/model-form-class.html'
     form_class = VehicleForm
     success_url = '/chapter-7/vehicle-form-success/'
@@ -232,7 +297,8 @@ class ModelFormClassUpdateView(UpdateView):
                 'title': 'ModelFormClassUpdateView Page - Please Correct The Errors Below',
                 'page_id': 'model-form-class-id',
                 'page_class': 'model-form-class-page errors-found',
-                'h1_tag': 'This is the ModelFormClassUpdateView Page Using VehicleForm<br /><small class="error-msg">Errors Found</small>',
+                'h1_tag': 'This is the ModelFormClassUpdateView Page Using VehicleForm<br />' \
+                    '<small class="error-msg">Errors Found</small>',
                 'form': form,
                 #'buyer_formset': buyer_formset,
             })
@@ -243,6 +309,8 @@ class ModelFormClassUpdateView(UpdateView):
         It should return an HttpResponse.
         '''
 
-        # Perform Additional Actions, such as sending an email or custom business logic validation checking.
+        # Perform Additional Actions, such as sending an email or custom business logic
+        # validation checking.
         #form.send_email()
+
         return super().form_valid(form)

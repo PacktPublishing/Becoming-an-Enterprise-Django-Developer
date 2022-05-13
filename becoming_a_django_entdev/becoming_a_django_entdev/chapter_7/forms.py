@@ -1,9 +1,13 @@
+''' Chapter 7 Forms Module '''
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.core.files.storage import FileSystemStorage
+#from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
-from django.core.mail import EmailMessage, EmailMultiAlternatives
+from django.core.mail import (
+    EmailMessage,
+    #EmailMultiAlternatives
+)
 from django.core.validators import EmailValidator, validate_email
 from django.forms import Form, ModelForm, formset_factory
 from django.template.loader import get_template
@@ -15,6 +19,10 @@ from ..chapter_3.models import Vehicle
 
 
 class ContactForm(Form):
+    '''
+    Form Object Class to capture contact form submissions.
+    '''
+
     #pass
     success_url = '/default-contact-success/'
 
@@ -42,7 +50,8 @@ class ContactForm(Form):
         min_length = 5,
         max_length = 254,
         required = False,
-        help_text = 'Email address in example@example.com format for contacting you should we have questions about your message.',
+        help_text = 'Email address in example@example.com format for contacting you should we ' \
+            'have questions about your message.',
         validators = [
             EmailValidator('Please enter a valid email address'),
         ],
@@ -56,7 +65,8 @@ class ContactForm(Form):
         min_length = 5,
         max_length = 254,
         required = True,
-        help_text = 'Email address in example@example.com format for contacting you should we have questions about your message.',
+        help_text = 'Email address in example@example.com format for contacting you should we ' \
+            'have questions about your message.',
         error_messages = {
             'required': 'Please provide us an email address should we need to reach you',
             'email': 'Please enter a valid email address',
@@ -69,7 +79,8 @@ class ContactForm(Form):
         min_length = 5,
         max_length = 254,
         required = False,
-        help_text = 'Email address in example@example.com format for contacting you should we have questions about your message.',
+        help_text = 'Email address in example@example.com format for contacting you should we ' \
+            'have questions about your message.',
         error_messages = {
             'min_length': 'Please lengthen your name, min 5 characters',
             'max_length': 'Please shorten your name, max 254 characters'
@@ -95,7 +106,8 @@ class ContactForm(Form):
     )
     multiple_emails = MultipleEmailField(
         label = 'Multiple Email Field',
-        help_text = 'Please enter one or more email addresses, each separated by a comma with NO spaces',
+        help_text = 'Please enter one or more email addresses, each separated by a comma with ' \
+            'NO spaces',
         required = True,
         error_messages = {
             #'required': 'This multiple_emails field is required.',,
@@ -137,7 +149,9 @@ class ContactForm(Form):
         ret = forms.Form.is_valid(self)
 
         for f in self.errors:
-            self.fields[f].widget.attrs.update({'class': self.fields[f].widget.attrs.get('class', '') + ' field-error'})
+            self.fields[f].widget.attrs.update(
+                {'class': self.fields[f].widget.attrs.get('class', '') + ' field-error'}
+            )
 
         return ret
 
@@ -163,14 +177,22 @@ class ContactForm(Form):
         #if 'email_3' in self.cleaned_data and self.cleaned_data['email_3'] != '':
         #    email = self.cleaned_data['email_3']
 
-        #    if 'conditional_required' in self.cleaned_data and self.cleaned_data['conditional_required'] != '':
+        #    if (
+        #        'conditional_required' in self.cleaned_data and
+        #        self.cleaned_data['conditional_required'] != ''
+        #    ):
         #        text_field = self.cleaned_data['conditional_required']
 
         if email and not text_field:
-            self.add_error('conditional_required', 'If there is a value in the field labeled "email_3" then this field is required')
+            self.add_error(
+                'conditional_required',
+                'If there is a value in the field labeled "email_3" then this field is required'
+            )
 
-    # Validation - Compares a Single Field Only
     def clean_email_3(self):
+        '''
+        Validation - Compares a Single Field Only - email_3 field.
+        '''
         #print('clean_email_3() Fired')
         #print(self.data)
         #print(self.cleaned_data)
@@ -181,8 +203,13 @@ class ContactForm(Form):
             try:
                 validate_email(email)
             except ValidationError:
-                self.add_error('email_3', 'The following is not a valid email address: {0}'.format(email))
-                #raise ValidationError('The following is not a valid email address: {0}'.format(email))
+                self.add_error(
+                    'email_3',
+                    f'The following is not a valid email address: {email}'
+                )
+                #raise ValidationError(
+                #    'The following is not a valid email address: {0}'.format(email)
+                #)
         else:
             self.add_error('email_3', 'This field is required')
             #raise ValidationError('This field is required')
@@ -190,9 +217,13 @@ class ContactForm(Form):
         return email
 
     def send_email(self, request):
+        '''
+        Method to send generic email
+        '''
         print('Creating Email')
 
-        # The 'request' variable not used, but it can be passed in to access here in any way you would normally use the 'request' object.
+        # The 'request' variable not used, but it can be passed in to access here in any way
+        # you would normally use the 'request' object.
 
         data = self.cleaned_data
 
@@ -251,28 +282,31 @@ class ContactForm(Form):
         #email.attach_file(settings.STATIC_ROOT + '/chapter_7/pdf/example.pdf')
 
         # Actually Sends the Email
-        email.send(fail_silently=True)
+        email.send(fail_silently = True)
 
     def generate_pdf(self, request):
+        '''
+        Method to print/generate generic PDF
+        '''
         print('Generating PDF')
 
         template = get_template('chapter_7/pdfs/pdf_template.html')
 
         # Used for Template Based PDF - Static PDF Example
         #dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test.pdf', 'w+b')
-        
+
         # Used for Template Based PDF w/ Context - Dynamic PDF Example
         data = self.cleaned_data
         context = {
             'data': data
         }
-        
+
         # Used for Template Based PDF w/ Context - Dynamic PDF Example
         dest = open(settings.STATIC_ROOT + '/chapter_7/pdf/test_2.pdf', 'w+b')
-        
+
         # Used for Template Based PDF - Static PDF Example
         #html = template.render()
-        
+
         # Used for Template Based PDF w/ Context - Dynamic PDF Example
         html = template.render(context)
 
@@ -285,17 +319,28 @@ class ContactForm(Form):
         # Optional Error Catching
         #if result.err:
         #    print('PDF Error Found')
-        #    return HttpResponse('We had problems generating the PDF. Error found {0}'.format(result.err))
+        #    return HttpResponse(
+        #        'We had problems generating the PDF. Error found {0}'.format(result.err)
+        #    )
 
         return HttpResponse(result.err)
 
 class VehicleForm(ModelForm):
+    '''
+    Form Object Class to capture vehicle form submissions.
+    '''
     class Meta:
+        '''
+        Vehicle Form Meta Sub-Class
+        '''
         model = Vehicle
         fields = ['vin', 'sold', 'price', 'make', 'vehicle_model', 'engine',]
 
 
 class ProspectiveBuyerForm(Form):
+    '''
+    Form Object Class to capture prospective buyers form submissions.
+    '''
     first_name = forms.CharField(
         label = 'First Name',
         widget = forms.TextInput(

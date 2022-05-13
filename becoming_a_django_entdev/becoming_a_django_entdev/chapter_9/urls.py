@@ -14,10 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import include, path, re_path, register_converter
-from django.views.generic import TemplateView, RedirectView
-from rest_framework import routers
+from django.urls import path, register_converter
+from django.views.generic import TemplateView
 from ..chapter_4.converters import YearConverter
 from ..chapter_4.views import practice_year_view, VehicleView
 

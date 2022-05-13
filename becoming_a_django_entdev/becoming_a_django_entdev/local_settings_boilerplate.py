@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
+#import os
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'your_secret_key
@@ -33,4 +33,3 @@ import os
 #        'PORT': '5432',
 #    }
 #}
-

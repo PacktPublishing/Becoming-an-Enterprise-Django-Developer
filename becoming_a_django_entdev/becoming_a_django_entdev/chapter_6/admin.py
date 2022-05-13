@@ -1,3 +1,4 @@
+''' Admin Module For Chapter 6 '''
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, StackedInline, TabularInline
 from django.contrib.auth.admin import UserAdmin
@@ -6,41 +7,59 @@ from .forms import (
     AddEngineForm,
     EngineForm,
     EngineSuperUserForm,
-    AddSellerForm,
-    SellerForm,
-    SellerSuperUserForm
+    #AddSellerForm,
+    #SellerForm,
+    #SellerSuperUserForm
 )
-from ..chapter_3.models import Engine, Seller, Vehicle, Vehicle_Model
+from ..chapter_3.models import Engine, Seller, Vehicle, VehicleModel
 
 
 #class EngineInline(TabularInline):
 class EngineInline(StackedInline):
+    '''
+    Stacked/Tabular In-line Engine Admin Form
+    '''
     model = Engine
     extra = 1
 
-class Vehicle_ModelInline(TabularInline):
-#class Vehicle_ModelInline(StackedInline):
-    model = Vehicle_Model
+class VehicleModelInline(TabularInline):
+#class VehicleModelInline(StackedInline):
+    '''
+    Stacked/Tabular In-line Vehicle Model Admin Form
+    '''
+    model = VehicleModel
     extra = 1
 
 class SellerInline(TabularInline):
 #class SellerInline(StackedInline):
+    '''
+    Stacked/Tabular In-line Seller Admin Form
+    '''
     model = Seller
     extra = 1
 
 class VehicleInline(TabularInline):
 #class VehicleInline(StackedInline):
+    '''
+    Stacked/Tabular In-line Vehicle Admin Form
+    '''
     model = Vehicle
     extra = 1
 
 class VehiclesInline(TabularInline):
 #class VehiclesInline(StackedInline):
+    '''
+    Stacked/Tabular In-line Seller Vehicle Admin Form
+    '''
     model = Seller.vehicles.through
     extra = 1
 
 
 @admin.register(Engine)
 class EngineAdmin(ModelAdmin):
+    '''
+    Engine Admin Form
+    '''
     #pass
 
     #form = EngineForm
@@ -66,13 +85,13 @@ class EngineAdmin(ModelAdmin):
         # Code actions before delete here
 
         super().delete_model(request, obj)
-        
+
         print('After Delete')
         # Code actions after delete here
 
     def save_model(self, request, obj, form, change):
         print(obj.__dict__)
-        
+
         print('Before Save')
         # Code actions before save here
 
@@ -84,6 +103,9 @@ class EngineAdmin(ModelAdmin):
 @admin.register(Seller)
 #class SellerAdmin(ModelAdmin):
 class SellerAdmin(UserAdmin):
+    '''
+    Seller Admin Form
+    '''
     #pass
 
     # Do Not Use, For Display Only
@@ -208,12 +230,18 @@ class SellerAdmin(UserAdmin):
 
 @admin.register(Vehicle)
 class VehicleAdmin(ModelAdmin):
+    '''
+    Vehicle Admin Form
+    '''
     #pass
     #radio_fields = {'engine': admin.VERTICAL}
     radio_fields = {'engine': admin.HORIZONTAL}
 
-@admin.register(Vehicle_Model)
-class Vehicle_ModelAdmin(ModelAdmin):
+@admin.register(VehicleModel)
+class VehicleModelAdmin(ModelAdmin):
+    '''
+    Vehicle Model Admin Form
+    '''
     #pass
     inlines = [VehicleInline,]
 
@@ -222,4 +250,4 @@ class Vehicle_ModelAdmin(ModelAdmin):
 #admin.site.register(Engine, EngineAdmin)
 #admin.site.register(Seller, SellerAdmin)
 #admin.site.register(Vehicle, VehicleAdmin)
-#admin.site.register(Vehicle_Model, Vehicle_ModelAdmin)
+#admin.site.register(VehicleModel, VehicleModelAdmin)

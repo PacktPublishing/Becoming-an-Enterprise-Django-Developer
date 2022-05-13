@@ -1,9 +1,13 @@
-from django.contrib.auth.models import AbstractUser, AbstractBaseUser
-from django.contrib.auth.hashers import make_password
+''' Chapter 3 Models Module '''
+from django.contrib.auth.models import (
+    AbstractUser,
+    #AbstractBaseUser,
+)
+#from django.contrib.auth.hashers import make_password
 from django.db import models
 from django.db.models.functions import Lower
 from djmoney.models.fields import MoneyField
-from djmoney.money import Money
+#from djmoney.money import Money
 from djmoney.models.validators import MaxMoneyValidator, MinMoneyValidator
 
 
@@ -27,7 +31,10 @@ MAKE_CHOICES = (
 )
 
 
-class Vehicle_Model(models.Model):
+class VehicleModel(models.Model):
+    '''
+    Model Object for Database Table chapter_3_vehicle_model
+    '''
     name = models.CharField(
         verbose_name = 'Model',
         max_length = 75,
@@ -43,12 +50,21 @@ class Vehicle_Model(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        '''
+        Method to return __str__ format of the VehicleModel Model
+        '''
+        return str(self.name)
 
     def natural_key(self):
+        '''
+        Method to return Natural Key format of the VehicleModel Model
+        '''
         return self.__str__()
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_vehicle_model Table
+        '''
         ordering = ['name',]
         verbose_name = 'Vehicle Model'
         verbose_name_plural = 'Vehicle Models'
@@ -61,6 +77,9 @@ class Vehicle_Model(models.Model):
 
 
 class Engine(models.Model):
+    '''
+    Model Object for Database Table chapter_3_engine
+    '''
     name = models.CharField(
         verbose_name = 'Engine',
         max_length = 75,
@@ -68,7 +87,7 @@ class Engine(models.Model):
         null = True,
     )
     vehicle_model = models.ForeignKey(
-        Vehicle_Model,
+        VehicleModel,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
         related_name = 'model_engine',
@@ -77,18 +96,30 @@ class Engine(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        '''
+        Method to return __str__ format of the Engine Model
+        '''
+        return str(self.name)
 
     def natural_key(self):
+        '''
+        Method to return Natural Key format of the Engine Model
+        '''
         return self.__str__()
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_engine Table
+        '''
         ordering = ['name',]
         verbose_name = 'Engine'
         verbose_name_plural = 'Engines'
 
 
 class engine2(models.Model):
+    '''
+    Model Object for Database Table chapter_3_practice_engine
+    '''
     name = models.CharField(
         verbose_name = 'Engine',
         max_length = 75,
@@ -96,7 +127,7 @@ class engine2(models.Model):
         null = True,
     )
     vehicle_model = models.ForeignKey(
-        Vehicle_Model,
+        VehicleModel,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
         related_name = 'model_engine2',
@@ -104,7 +135,10 @@ class engine2(models.Model):
         null = True,
     )
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_practice_engine Table
+        '''
         abstract = True
         db_table = 'chapter_3_practice_engine'
         ordering = ['name',]
@@ -113,6 +147,9 @@ class engine2(models.Model):
 
 
 class engine3(engine2):
+    '''
+    Model Object for Database Table chapter_3_practice_engine
+    '''
     other_name = models.CharField(
         verbose_name = 'Other Engine Name',
         max_length = 75,
@@ -122,16 +159,31 @@ class engine3(engine2):
 
 
 class BuickVehicleManager(models.Manager):
+    '''
+    Model Manager for Buick Only Vehicles
+    '''
     def get_queryset(self):
+        '''
+        Method to return standard/default queryset of the BuickVehicleManager
+        '''
         return super().get_queryset().filter(make=1)
 
 
 class ChevyVehicleManager(models.Manager):
+    '''
+    Model Manager for Chevy Only Vehicles
+    '''
     def get_queryset(self):
+        '''
+        Method to return standard/default queryset of the ChevyVehicleManager
+        '''
         return super().get_queryset().filter(make=3)
 
 
 class Vehicle(models.Model):
+    '''
+    Model Object for Database Table chapter_3_vehicle
+    '''
     vin = models.CharField(
         verbose_name = 'VIN',
         max_length = 17,
@@ -167,7 +219,7 @@ class Vehicle(models.Model):
         null = True,
     )
     vehicle_model = models.ForeignKey(
-        Vehicle_Model,
+        VehicleModel,
         on_delete = models.CASCADE,
         verbose_name = 'Model',
         related_name = 'model_vehicle',
@@ -188,38 +240,62 @@ class Vehicle(models.Model):
     chevy_objects = ChevyVehicleManager() # The Chevy Specific Manager
 
     def __str__(self):
+        '''
+        Method to return __str__ format of the Vehicle Model
+        '''
         MAKE_CHOICES_DICT = dict(MAKE_CHOICES)
 
         return MAKE_CHOICES_DICT[self.make] + ' ' + self.vehicle_model.name
 
     def full_vehicle_name(self):
+        '''
+        Method to return full vehicle name of seller
+        '''
         return self.__str__() + ' - ' + self.engine.name
 
     @property
     def fullname(self):
+        '''
+        Method to return full name of seller object as a property value
+        '''
         return self.__str__() + ' - ' + self.engine.name
 
     def get_url(self):
+        '''
+        Method to return relative URL of a seller object edit page
+        '''
         from django.urls import reverse
         return reverse('vehicle-detail', kwargs={'id' : self.pk})
         #return reverse('vehicle-detail', kwargs={'vin' : self.vin})
 
     def get_absolute_url(self, request):
+        '''
+        Method to return absolute URL of a seller object edit page
+        '''
         from django.urls import reverse
         base_url = request.build_absolute_uri('/')[:-1].strip('/')
         return base_url + reverse('vehicle-detail', kwargs={'id' : self.pk})
         #return base_url + reverse('vehicle-detail', kwargs={'vin' : self.vin})
 
     def natural_key(self):
+        '''
+        Method to return Natural Key format of the Seller Model
+        '''
         return self.full_vehicle_name()
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_vehicle Table
+        '''
         ordering = ['sold', 'vin',]
         verbose_name = 'Vehicle'
         verbose_name_plural = 'Vehicles'
 
 
 class Seller(AbstractUser):
+    '''
+    Model Object for Database Table chapter_3_seller
+    '''
     name = models.CharField(
         verbose_name = 'Business Name',
         max_length = 150,
@@ -235,12 +311,21 @@ class Seller(AbstractUser):
     )
 
     def __str__(self):
-        return self.username
+        '''
+        Method to return __str__ format of the Seller Model
+        '''
+        return str(self.username)
 
     def natural_key(self):
+        '''
+        Method to return Natural Key format of the Seller Model
+        '''
         return self.__str__()
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_seller Table
+        '''
         ordering = ['name',]
         verbose_name = 'Seller'
         verbose_name_plural = 'Sellers'

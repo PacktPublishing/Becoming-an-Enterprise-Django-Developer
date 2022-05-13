@@ -1,26 +1,27 @@
+''' Chapter 5 Fields Module '''
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.forms.fields import Field
 from django.forms.widgets import (
-    FILE_INPUT_CONTRADICTION,
-    CheckboxInput,
-    ClearableFileInput,
-    DateInput,
-    DateTimeInput,
-    EmailInput,
-    FileInput,
-    HiddenInput,
-    MultipleHiddenInput,
-    NullBooleanSelect,
-    NumberInput,
-    Select,
-    SelectMultiple,
-    SplitDateTimeWidget,
-    SplitHiddenDateTimeWidget,
-    Textarea,
+    #FILE_INPUT_CONTRADICTION,
+    #CheckboxInput,
+    #ClearableFileInput,
+    #DateInput,
+    #DateTimeInput,
+    #EmailInput,
+    #FileInput,
+    #HiddenInput,
+    #MultipleHiddenInput,
+    #NullBooleanSelect,
+    #NumberInput,
+    #Select,
+    #SelectMultiple,
+    #SplitDateTimeWidget,
+    #SplitHiddenDateTimeWidget,
+    #Textarea,
     TextInput,
-    TimeInput,
-    URLInput,
+    #TimeInput,
+    #URLInput,
 )
 
 
@@ -32,7 +33,8 @@ class MultipleEmailField(Field):
     default_validators = []
     default_error_messages = {
         'required': 'Default Required Error Message',
-        'email': 'Please enter a valid email address or addresses separated by a comma with NO spaces'
+        'email': 'Please enter a valid email address or addresses separated by a comma with ' \
+            'NO spaces'
     }
 
     def to_python(self, value):
@@ -48,7 +50,8 @@ class MultipleEmailField(Field):
 
     def validate(self, value):
         '''
-        Performs self validation on each comma separated email address using the validate_email() function
+        Performs self validation on each comma separated email address using the
+        validate_email() function
         '''
         super().validate(value)
 

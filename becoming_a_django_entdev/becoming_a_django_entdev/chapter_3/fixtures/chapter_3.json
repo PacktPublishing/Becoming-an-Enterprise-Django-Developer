@@ -1,6 +1,6 @@
 [
   {
-    "model": "chapter_3.vehicle_model",
+    "model": "chapter_3.vehiclemodel",
     "pk": 1,
     "fields": {
       "name": "Envision Avenir",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "chapter_3.vehicle_model",
+    "model": "chapter_3.vehiclemodel",
     "pk": 2,
     "fields": {
       "name": "Enclave Avenir",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "chapter_3.vehicle_model",
+    "model": "chapter_3.vehiclemodel",
     "pk": 3,
     "fields": {
       "name": "Blazer LT",

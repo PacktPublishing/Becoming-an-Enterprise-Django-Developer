@@ -1,5 +1,7 @@
+''' Chapter 6 App Module '''
 from django.apps import AppConfig
 
 
-class chapter_6Config(AppConfig):
+class Chapter6Config(AppConfig):
+    ''' Chapter 6 App Configuration Class '''
     name = 'becoming_a_django_entdev.chapter_6'

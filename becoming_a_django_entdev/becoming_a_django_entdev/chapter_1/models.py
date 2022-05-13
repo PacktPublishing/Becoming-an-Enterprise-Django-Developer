@@ -1,11 +1,15 @@
+'''
+Chapter 1 Models Module - Use Separately from the rest of the chapters.
+Do not install/run this chapter together
+'''
 from django.conf import settings
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.db import models
 
 
 class Award(models.Model):
     '''
-    Awards
+    Model Class for chapter_1_award table
     '''
     name = models.CharField(
         verbose_name = 'Award Name',
@@ -21,17 +25,20 @@ class Award(models.Model):
         db_index = True
     )
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_1_award table
+        '''
         verbose_name = 'Award'
         verbose_name_plural = 'Awards'
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Team(models.Model):
     '''
-    Teams
+    Model Class for chapter_1_team table
     '''
     name = models.CharField(
         verbose_name = 'Island Name',
@@ -82,9 +89,12 @@ class Team(models.Model):
         related_query_name = 'user_teams',
     )
 
-    class Meta(object):
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_1_team table
+        '''
         verbose_name = 'Team'
         verbose_name_plural = 'Teams'
 
     def __str__(self):
-        return self.name
+        return str(self.name)

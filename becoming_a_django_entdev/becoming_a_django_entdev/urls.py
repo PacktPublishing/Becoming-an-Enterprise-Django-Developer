@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
-from django.urls import include, path, re_path, register_converter
-from django.views.generic import TemplateView, RedirectView
+from django.urls import (
+    include,
+    path,
+    re_path,
+    #register_converter,
+)
+from django.views.generic import (
+    #TemplateView,
+    RedirectView,
+)
 
 
 # CHAPTERS 1, 2 & 3 - Leave Uncommented for All Chapters #
@@ -26,8 +33,10 @@ favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     # Global Favicon Path Enabled
-    re_path(r'^favicon\.ico$', favicon_view), # Can Still Use "<link rel="icon" href="{% static 'app_name/sub_folder/images/favicon.ico' %}">" For Custom Sub Page Favicons
-    #path('admin/', admin.site.urls),
+    # Can Still Use
+    # "<link rel="icon" href="{% static 'app_name/sub_folder/images/favicon.ico' %}">"
+    # For Custom Sub Page Favicons
+    re_path(r'^favicon\.ico$', favicon_view),
 ]
 # END - CHAPTERS 1, 2 & 3 #
 
@@ -35,11 +44,19 @@ urlpatterns = [
 urlpatterns = urlpatterns + [
     #path('', TemplateView.as_view(template_name='chapter_4/index.html')),
 
-    #path('', TemplateView.as_view(template_name='chapter_4/index.html'), kwargs={'sub_title': 'I am the sub title.'}),
-    #path('chapter-4/', TemplateView.as_view(template_name='chapter_4/chapter_4.html')),
+    #path(
+    #    '',
+    #    TemplateView.as_view(template_name='chapter_4/index.html'),
+    #    kwargs = {'sub_title': 'I am the sub title.'}
+    #),
+    #path(
+    #    'chapter-4/',
+    #    TemplateView.as_view(template_name='chapter_4/chapter_4.html')
+    #),
 
     #path('', include('becoming_a_django_entdev.chapter_4.urls')),
-] # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    #static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #
@@ -79,12 +96,15 @@ urlpatterns = urlpatterns + [
 #]
 # END - CHAPTER 10 #
 
-# CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all chapters to allow the writer and the testers to use it and make sure things are working properly but this tool is not revealed to the reader until Chapter 9
+# CHAPTER 9 - Used when discussing the Django Debug Toolbar, this is turned on throughout all
+# chapters to allow the writer and the testers to use it and make sure things are working properly
+# but this tool is not revealed to the reader until Chapter 9
 # Debug/Development Mode Only
 if settings.DEBUG:
     import debug_toolbar
 
-    # This is a better way to organize the STATIC and MEDIA patterns versus how it was added in the Chapter 4 URL Patterns above
+    # This is a better way to organize the STATIC and MEDIA patterns versus how it was added in
+    # the Chapter 4 URL Patterns above
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

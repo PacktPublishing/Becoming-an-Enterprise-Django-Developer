@@ -15,7 +15,7 @@ import django_heroku
 import dj_database_url
 import dotenv
 
-from pathlib import Path
+#from pathlib import Path
 from django.contrib.messages import constants as messages
 
 
@@ -88,7 +88,10 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    #'debug_toolbar', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
+    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+    # those exercises.
+    #'debug_toolbar',
+
     'django_extensions', # Chapter 2 - Project Configuration
     'address', # Chapter 3 - Django Models
     'djmoney', # Chapter 3 - Django Models
@@ -98,10 +101,19 @@ THIRD_PARTY_APPS = [
 ]
 
 if DEBUG:
-    THIRD_PARTY_APPS[0] = 'debug_toolbar' # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
+    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+    # those exercises.
+    THIRD_PARTY_APPS[0] = 'debug_toolbar'
 
 LOCAL_APPS = [
-    #'becoming_a_django_entdev.chapter_1', - Only use for chapter 1 or to go back and practice generating diagrams in that chapter, Chapter 3 - 10, this will need to be commented out in order to use those chapters without errors. You can always practice generating diagrams on other apps/models as well. The reason errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting to now point to the Seller model instead of the default User model. A model in Chapter 1's example points to the original User model, proceed with caution.
+    # Only use for chapter 1 or to go back and practice generating diagrams in that chapter,
+    # Chapter 3 - 10, this will need to be commented out in order to use those chapters without
+    # errors. You can always practice generating diagrams on other apps/models as well. The reason
+    # errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
+    # to now point to the Seller model instead of the default User model. A model in Chapter 1's
+    # example points to the original User model. Proceed with caution!
+    #'becoming_a_django_entdev.chapter_1',
+
     #'becoming_a_django_entdev.chapter_2',
     #'becoming_a_django_entdev.chapter_3',
     #'becoming_a_django_entdev.chapter_4',
@@ -121,7 +133,8 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # Middleware Framework
 # https://docs.djangoproject.com/en/3.2/topics/http/middleware/
 MIDDLEWARE = [
-    #'debug_toolbar.middleware.DebugToolbarMiddleware', # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
+    #'debug_toolbar.middleware.DebugToolbarMiddleware', # Introduced in Chapter 9, can be turned
+    #on in all previous chapters without disrupting those exercises.
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Chapter 7 - Django Messages Framework
@@ -133,7 +146,9 @@ MIDDLEWARE = [
 ]
 
 if DEBUG:
-    MIDDLEWARE[0] = 'debug_toolbar.middleware.DebugToolbarMiddleware' # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting those exercises.
+    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+    # those exercises.
+    MIDDLEWARE[0] = 'debug_toolbar.middleware.DebugToolbarMiddleware'
 
 # Chapter 2 - Project Configuration
 ROOT_URLCONF = 'becoming_a_django_entdev.urls'
@@ -151,8 +166,12 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages', # Chapter 7 - Django Messages Framework
-                #'becoming_a_django_entdev.context_processors.global_context', # Chapter 4 - URLs, Views, and Templates
+
+                # Chapter 7 - Django Messages Framework
+                'django.contrib.messages.context_processors.messages',
+
+                # Chapter 4 - URLs, Views, and Templates
+                #'becoming_a_django_entdev.context_processors.global_context',
             ],
         },
     },
@@ -164,7 +183,8 @@ PREPEND_WWW = False
 APPEND_SLASH = True
 
 # Chapter 2 - Project Configuration
-# Database Connection that was auto-generated using the Visual Studio IDE. An SQLite Database was also auto-created in the project root directory.
+# Database Connection that was auto-generated using the Visual Studio IDE. An SQLite Database was
+# also auto-created in the project root directory.
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #DATABASES = {
@@ -175,7 +195,8 @@ APPEND_SLASH = True
 #}
 
 # Chapter 2 - Project Configuration
-# Database Connection used in Chapter 2, works with Heroku as our Host. Relies on this variable in the .env file DATABASE_URL = postgres://postgres:db_password@localhost:5432/db_name
+# Database Connection used in Chapter 2, works with Heroku as our Host. Relies on this variable in
+# the .env file DATABASE_URL = postgres://postgres:db_password@localhost:5432/db_name
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
@@ -202,7 +223,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Chapter 3 - Custom User Model
+# Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
 #AUTH_USER_MODEL = 'chapter_3.Seller'
 
 # Chapter 2 - Project Configuration
@@ -277,11 +298,14 @@ MESSAGE_TAGS = {
 import mimetypes
 mimetypes.add_type('application/javascript', '.js', True)
 
-# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting those exercises.
+# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting
+# those exercises.
 def show_toolbar(request):
+    ''' Show Toolbar Value as Method/Callable '''
     return True
 
-# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting those exercises.
+# Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting
+# those exercises.
 if os.getenv('SHOW_TOOLBAR_CALLBACK') == 'True':
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar,
@@ -294,7 +318,8 @@ django_heroku.settings(locals())
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
-# Chapter 2 - Project Configuration - EXTRA PRACTICE - Another way to import settings that can be ignored via a .gitignore setting
+# Chapter 2 - Project Configuration - EXTRA PRACTICE - Another way to import settings that can be
+# ignored via a .gitignore setting
 try:
     from .local_settings import *
 except ImportError:
