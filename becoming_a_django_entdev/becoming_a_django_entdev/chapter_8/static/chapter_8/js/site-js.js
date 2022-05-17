@@ -46,9 +46,9 @@ function $gotoSPA_Page() {
       console.log('Success:', data);
       container.innerHTML = JSON.stringify(data);
 
-      /*const thisdata = await data;*/
-      /*container.innerHTML = thisdata;*/
-      /*container.innerHTML = JSON.stringify(thisdata);*/
+      /*const thisData = await data;*/
+      /*container.innerHTML = thisData;*/
+      /*container.innerHTML = JSON.stringify(thisData);*/
     });
 
   // Exercise 2

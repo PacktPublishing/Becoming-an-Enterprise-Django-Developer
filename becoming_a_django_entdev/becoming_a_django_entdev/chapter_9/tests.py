@@ -243,6 +243,16 @@ class TestingCalibrator(SimpleTestCase):
 #        #    password = 'mynewpassword1' # Incorrect Value
 #        #)
 
+#        # Extra Practice
+#        #model = VehicleModel.objects.create(
+#        #    name = 'Grand Cherokee Laredo 4WD',
+#        #    make = 8
+#        #)
+#        #Engine.objects.create(
+#        #    name = '3.6L FI FFV DO',
+#        #    vehicle_model = model
+#        #)
+
 #    def test_post(self):
 #        '''
 #        Tests creating an Engine at a Django REST Framework REST-API Endpoint using the POST method

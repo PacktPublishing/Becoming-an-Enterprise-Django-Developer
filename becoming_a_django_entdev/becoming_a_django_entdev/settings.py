@@ -89,21 +89,21 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
-    # those exercises.
+    # those exercises. Turn Off/Comment Out For the First Half of Chapter 9
     #'debug_toolbar',
 
     'django_extensions', # Chapter 2 - Project Configuration
-    'address', # Chapter 3 - Django Models
-    'djmoney', # Chapter 3 - Django Models
-    'phone_field', # Chapter 3 - Django Models
+    #'address', # Chapter 3 - Django Models
+    #'djmoney', # Chapter 3 - Django Models
+    #'phone_field', # Chapter 3 - Django Models
     #'rest_framework', # Chapter 8 - Django REST Framework
     #'rest_framework.authtoken', # Chapter 8 - Django REST Framework
 ]
 
-if DEBUG:
-    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
-    # those exercises.
-    THIRD_PARTY_APPS[0] = 'debug_toolbar'
+#if DEBUG:
+#    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+#    # those exercises. Turn Off/Comment Out For the First Half of Chapter 9
+#    THIRD_PARTY_APPS[0] = 'debug_toolbar'
 
 LOCAL_APPS = [
     # Only use for chapter 1 or to go back and practice generating diagrams in that chapter,
@@ -145,10 +145,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if DEBUG:
-    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
-    # those exercises.
-    MIDDLEWARE[0] = 'debug_toolbar.middleware.DebugToolbarMiddleware'
+# Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+# those exercises. Turn Off/Comment Out For the First Half of Chapter 9
+#if DEBUG:
+#    MIDDLEWARE[0] = 'debug_toolbar.middleware.DebugToolbarMiddleware'
 
 # Chapter 2 - Project Configuration
 ROOT_URLCONF = 'becoming_a_django_entdev.urls'
@@ -224,7 +224,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
-#AUTH_USER_MODEL = 'chapter_3.Seller'
+AUTH_USER_MODEL = 'chapter_3.Seller'
 
 # Chapter 2 - Project Configuration
 # Internationalization
@@ -305,11 +305,11 @@ def show_toolbar(request):
     return True
 
 # Chapter 9 - Testing/Debug Tool, can be turned on in all previous chapters without disrupting
-# those exercises.
-if os.getenv('SHOW_TOOLBAR_CALLBACK') == 'True':
-    DEBUG_TOOLBAR_CONFIG = {
-        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
-    }
+# those exercises. Turn Off/Comment Out For the First Half of Chapter 9
+#if os.getenv('SHOW_TOOLBAR_CALLBACK') == 'True':
+#    DEBUG_TOOLBAR_CONFIG = {
+#        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
+#    }
 
 # Chapter 2 - Project Configuration
 django_heroku.settings(locals())

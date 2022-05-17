@@ -39,10 +39,10 @@ function $gotoSPA_Page() {
       return await response.json();
     })
     .then(async(data) => {
-      const thisdata = await data;
-      console.log('Success:', thisdata);
-      /*container.innerHTML = thisdata;*/
-      container.innerHTML = JSON.stringify(thisdata);
+      const thisData = await data;
+      console.log('Success:', thisData);
+      /*container.innerHTML = thisData;*/
+      container.innerHTML = JSON.stringify(thisData);
     });
 
   // Exercise 2

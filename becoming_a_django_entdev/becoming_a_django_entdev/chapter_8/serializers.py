@@ -2,14 +2,14 @@
 #from django.contrib.auth.models import Group, Permission, User
 #from django.contrib.contenttypes.models import ContentType
 from rest_framework.serializers import (
-    #HyperlinkedModelSerializer,
+    HyperlinkedModelSerializer,
     ModelSerializer,
 )
 from ..chapter_3.models import Seller, Vehicle, Engine, VehicleModel
 
 
-class EngineSerializer(ModelSerializer):
-#class EngineSerializer(HyperlinkedModelSerializer):
+#class EngineSerializer(ModelSerializer):
+class EngineSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Engine Model
     '''
@@ -23,8 +23,8 @@ class EngineSerializer(ModelSerializer):
         #depth = 3
 
 
-class VehicleModelSerializer(ModelSerializer):
-#class VehicleModelSerializer(HyperlinkedModelSerializer):
+#class VehicleModelSerializer(ModelSerializer):
+class VehicleModelSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for VehicleModel Model
     '''
@@ -38,8 +38,8 @@ class VehicleModelSerializer(ModelSerializer):
         #depth = 3
 
 
-class VehicleSerializer(ModelSerializer):
-#class VehicleSerializer(HyperlinkedModelSerializer):
+#class VehicleSerializer(ModelSerializer):
+class VehicleSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Vehicle Model
     '''
@@ -53,8 +53,8 @@ class VehicleSerializer(ModelSerializer):
         #depth = 3
 
 
-class SellerSerializer(ModelSerializer):
-#class SellerSerializer(HyperlinkedModelSerializer):
+#class SellerSerializer(ModelSerializer):
+class SellerSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Seller Model
     '''
@@ -64,7 +64,8 @@ class SellerSerializer(ModelSerializer):
         '''
         model = Seller
         #fields = ['name', 'vehicles']
-        fields = '__all__'
+        #fields = '__all__'
+        exclude = ['groups', 'user_permissions']
         #depth = 3
 
 
@@ -79,7 +80,7 @@ class SellerSerializer(ModelSerializer):
 #        '''
 #        model = User
 #        fields = '__all__'
-#        depth = 3
+#        #depth = 3
 
 
 #class GroupSerializer(ModelSerializer):
@@ -93,7 +94,7 @@ class SellerSerializer(ModelSerializer):
 #        '''
 #        model = Group
 #        fields = '__all__'
-#        depth = 3
+#        #depth = 3
 
 
 ##class PermissionSerializer(ModelSerializer):
@@ -107,7 +108,7 @@ class SellerSerializer(ModelSerializer):
 #        '''
 #        model = Permission
 #        fields = '__all__'
-#        depth = 3
+#        #depth = 3
 
 
 ##class ContentTypeSerializer(ModelSerializer):
@@ -121,4 +122,4 @@ class SellerSerializer(ModelSerializer):
 #        '''
 #        model = ContentType
 #        fields = '__all__'
-#        depth = 3
+#        #depth = 3
