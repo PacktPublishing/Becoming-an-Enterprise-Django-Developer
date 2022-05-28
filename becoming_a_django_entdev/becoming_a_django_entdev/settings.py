@@ -106,12 +106,14 @@ THIRD_PARTY_APPS = [
 #    THIRD_PARTY_APPS[0] = 'debug_toolbar'
 
 LOCAL_APPS = [
-    # Only use for chapter 1 or to go back and practice generating diagrams in that chapter,
-    # Chapter 3 - 10, this will need to be commented out in order to use those chapters without
-    # errors. You can always practice generating diagrams on other apps/models as well. The reason
-    # errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
-    # to now point to the Seller model instead of the default User model. A model in Chapter 1's
-    # example points to the original User model. Proceed with caution!
+    '''
+    Only use chapter 1 to go back and practice generating diagrams in that chapter,
+    Chapter 3 - 10, will need to comment out chapter_1 in order to use those chapters without
+    errors. You can always practice generating diagrams on other apps/models as well. The reason
+    errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
+    to now point to the Seller model instead of the default User model. A model in Chapter 1's
+    example points to the original User model. Proceed with caution!
+    '''
     #'becoming_a_django_entdev.chapter_1',
 
     #'becoming_a_django_entdev.chapter_2',
@@ -224,7 +226,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
-AUTH_USER_MODEL = 'chapter_3.Seller'
+#AUTH_USER_MODEL = 'chapter_3.Seller'
 
 # Chapter 2 - Project Configuration
 # Internationalization
