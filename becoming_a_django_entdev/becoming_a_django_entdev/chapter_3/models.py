@@ -126,24 +126,24 @@ class Engine(models.Model):
 #        blank = True,
 #        null = True,
 #    )
-#    vehicle_model = models.ForeignKey(
-#        VehicleModel,
-#        on_delete = models.CASCADE,
-#        verbose_name = 'Model',
-#        related_name = 'model_engine2',
-#        blank = True,
-#        null = True,
-#    )
+#    #vehicle_model = models.ForeignKey(
+#    #    VehicleModel,
+#    #    on_delete = models.CASCADE,
+#    #    verbose_name = 'Model',
+#    #    related_name = 'model_engine2',
+#    #    blank = True,
+#    #    null = True,
+#    #)
 
 #    class Meta:
 #        '''
 #        Meta Sub-Class for chapter_3_practice_engine Table
 #        '''
-#        abstract = True
+#        #abstract = True
 #        db_table = 'chapter_3_practice_engine'
-#        ordering = ['name',]
-#        verbose_name = 'Practice Engine'
-#        verbose_name_plural = 'Practice Engines'
+#        #ordering = ['name',]
+#        #verbose_name = 'Practice Engine'
+#        #verbose_name_plural = 'Practice Engines'
 
 
 #class engine3(engine2):
