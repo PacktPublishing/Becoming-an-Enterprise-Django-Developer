@@ -292,7 +292,8 @@ class Vehicle(models.Model):
     #    verbose_name_plural = 'Vehicles'
 
 
-#class Seller(AbstractUser):
+#class Seller(models.Model):
+##class Seller(AbstractUser):
 #    '''
 #    Model Object for Database Table chapter_3_seller
 #    '''
@@ -310,22 +311,22 @@ class Vehicle(models.Model):
 #        blank = True,
 #    )
 
-#    def __str__(self):
-#        '''
-#        Method to return __str__ format of the Seller Model
-#        '''
-#        return str(self.username)
+#    #def __str__(self):
+#    #    '''
+#    #    Method to return __str__ format of the Seller Model
+#    #    '''
+#    #    return str(self.username)
 
-#    def natural_key(self):
-#        '''
-#        Method to return Natural Key format of the Seller Model
-#        '''
-#        return self.__str__()
+#    #def natural_key(self):
+#    #    '''
+#    #    Method to return Natural Key format of the Seller Model
+#    #    '''
+#    #    return self.__str__()
 
-#    class Meta:
-#        '''
-#        Meta Sub-Class for chapter_3_seller Table
-#        '''
-#        ordering = ['name',]
-#        verbose_name = 'Seller'
-#        verbose_name_plural = 'Sellers'
+#    #class Meta:
+#    #    '''
+#    #    Meta Sub-Class for chapter_3_seller Table
+#    #    '''
+#    #    ordering = ['name',]
+#    #    verbose_name = 'Seller'
+#    #    verbose_name_plural = 'Sellers'
