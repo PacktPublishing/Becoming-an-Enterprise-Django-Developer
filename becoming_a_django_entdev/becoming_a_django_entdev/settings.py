@@ -105,15 +105,15 @@ THIRD_PARTY_APPS = [
 #    # those exercises. Turn Off/Comment Out For the First Half of Chapter 9
 #    THIRD_PARTY_APPS[0] = 'debug_toolbar'
 
+'''
+Only use chapter 1 to go back and practice generating diagrams in that chapter,
+Chapter 3 - 10, will need to comment out chapter_1 in order to use those chapters without
+errors. You can always practice generating diagrams on other apps/models as well. The reason
+errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
+to now point to the Seller model instead of the default User model. A model in Chapter 1's
+example points to the original User model. Proceed with caution!
+'''
 LOCAL_APPS = [
-    '''
-    Only use chapter 1 to go back and practice generating diagrams in that chapter,
-    Chapter 3 - 10, will need to comment out chapter_1 in order to use those chapters without
-    errors. You can always practice generating diagrams on other apps/models as well. The reason
-    errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
-    to now point to the Seller model instead of the default User model. A model in Chapter 1's
-    example points to the original User model. Proceed with caution!
-    '''
     #'becoming_a_django_entdev.chapter_1',
 
     #'becoming_a_django_entdev.chapter_2',
