@@ -1,4 +1,5 @@
 ''' Chapter 3 Models Module '''
+### Replace this file with models_all_exercises_completed.py when working on preceding chapters.
 from django.contrib.auth.models import (
     AbstractUser,
     #AbstractBaseUser,
