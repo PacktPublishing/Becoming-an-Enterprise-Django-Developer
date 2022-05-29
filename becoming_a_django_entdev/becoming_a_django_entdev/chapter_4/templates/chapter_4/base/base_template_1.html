@@ -24,9 +24,6 @@
         {% else %}
             <script defer type="text/javascript" src="{{ base_url }}{% static 'chapter_4/js/site-js.min.js' %}"></script>
         {% endif %}
-
-        {# PAGE/GROUP SPECIFIC JAVASCRIPT PLUGINS #}
-        {% block js_scripts %}{% endblock %}
     </head>
 
     <body id="{% block page_id %}{% endblock %}" class="{% block page_class %}base-template-class{% endblock %} chapter_4" style="text-align: center;">

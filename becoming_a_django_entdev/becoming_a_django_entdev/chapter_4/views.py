@@ -43,15 +43,17 @@ def practice_year_view(request, year):
     #print(request.build_absolute_uri(reverse('year_url', args=(2026,))))
     #print(request.build_absolute_uri(reverse('year_url', args=(2027,))))
 
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
+    #logger = logging.getLogger(__name__)
+    #logger.setLevel(logging.INFO)
 
-    logger.info(f'The Requested Year Is: {year}')
+    #logger.info(f'The Requested Year Is: {year}')
 
-    if year >= 1900:
-        return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
-    else:
-        raise Http404(f'Year Not Found: {year}')
+    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+
+    #if year >= 1900:
+    #    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+    #else:
+    #    raise Http404(f'Year Not Found: {year}')
 
 
 def vehicle_view(request, id):

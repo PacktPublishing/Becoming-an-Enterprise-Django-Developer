@@ -60,6 +60,7 @@
     <Compile Include="becoming_a_django_entdev\chapter_3\apps.py" />
     <Compile Include="becoming_a_django_entdev\chapter_3\migrations\__init__.py" />
     <Compile Include="becoming_a_django_entdev\chapter_3\models.py" />
+    <Compile Include="becoming_a_django_entdev\chapter_3\models_all_exercises_completed.py" />
     <Compile Include="becoming_a_django_entdev\chapter_3\tests.py" />
     <Compile Include="becoming_a_django_entdev\chapter_3\views.py" />
     <Compile Include="becoming_a_django_entdev\chapter_3\__init__.py" />

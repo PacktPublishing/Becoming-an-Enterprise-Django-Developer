@@ -60,6 +60,10 @@ urlpatterns = [
     #    RedirectView.as_view(url='http://localhost:8000/my_wanted_url/', permanent=True)
     #),
     #path(
+    #    'my_wanted_url/',
+    #    TemplateView.as_view(template_name='chapter_4/index.html')
+    #),
+    #path(
     #    'my_path/<path:my_pattern>/',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
     #),
@@ -91,6 +95,10 @@ urlpatterns = [
     #re_path(
     #    'my_year_path/(?P<year>[0-9]{4})/$',
     #    practice_year_view
+    #),
+    #path(
+    #    'my_year_path/<year:year>/',
+    #    TemplateView.as_view(template_name='chapter_4/index.html')
     #),
     #path(
     #    'my_year_path/<year:year>/',
