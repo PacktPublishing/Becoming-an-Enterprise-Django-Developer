@@ -230,20 +230,20 @@ class ContactForm(Form):
         # Used for Sending Template Based Emails
         #template = get_template('chapter_7/emails/plain_text_format.html')
         #template = get_template('chapter_7/emails/html_format.html')
-        template = get_template('chapter_7/emails/new_contact_form_entry.html')
-        context = {
-            'data': data
-        }
+        #template = get_template('chapter_7/emails/new_contact_form_entry.html')
+        #context = {
+        #    'data': data
+        #}
 
         # Used for Plain Text Format
-        #msg_body = 'Hello World'
+        msg_body = 'Hello World'
 
         # Used for Rich Text Format
         #msg_body = '<b>Hello World</b>'
 
         # Used for Template Based Email
         #msg_body = template.render()
-        msg_body = template.render(context)
+        #msg_body = template.render(context)
 
         # Format Email Headers
         email = EmailMessage(
@@ -271,8 +271,8 @@ class ContactForm(Form):
         #)
 
         # Change Message From Text/Plain to Text/HTML
-        #email.content_subtype = 'plain' # Plain Text Emails
-        email.content_subtype = 'html' # HTML and Rich Text Emails
+        email.content_subtype = 'plain' # Plain Text Emails
+        #email.content_subtype = 'html' # HTML and Rich Text Emails
 
         #email = EmailMultiAlternatives(subject=subject, body=text_body, to=[user.email])
         #email.attach_alternative('Hello World', 'text/plain')
