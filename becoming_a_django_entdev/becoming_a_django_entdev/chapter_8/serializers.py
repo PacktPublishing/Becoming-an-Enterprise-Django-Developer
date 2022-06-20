@@ -8,8 +8,8 @@ from rest_framework.serializers import (
 from ..chapter_3.models import Seller, Vehicle, Engine, VehicleModel
 
 
-#class EngineSerializer(ModelSerializer):
-class EngineSerializer(HyperlinkedModelSerializer):
+class EngineSerializer(ModelSerializer):
+#class EngineSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Engine Model
     '''
@@ -23,8 +23,8 @@ class EngineSerializer(HyperlinkedModelSerializer):
         #depth = 3
 
 
-#class VehicleModelSerializer(ModelSerializer):
-class VehicleModelSerializer(HyperlinkedModelSerializer):
+class VehicleModelSerializer(ModelSerializer):
+#class VehicleModelSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for VehicleModel Model
     '''
@@ -38,8 +38,8 @@ class VehicleModelSerializer(HyperlinkedModelSerializer):
         #depth = 3
 
 
-#class VehicleSerializer(ModelSerializer):
-class VehicleSerializer(HyperlinkedModelSerializer):
+class VehicleSerializer(ModelSerializer):
+#class VehicleSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Vehicle Model
     '''
@@ -53,8 +53,8 @@ class VehicleSerializer(HyperlinkedModelSerializer):
         #depth = 3
 
 
-#class SellerSerializer(ModelSerializer):
-class SellerSerializer(HyperlinkedModelSerializer):
+class SellerSerializer(ModelSerializer):
+#class SellerSerializer(HyperlinkedModelSerializer):
     '''
     Serializer for Seller Model
     '''
