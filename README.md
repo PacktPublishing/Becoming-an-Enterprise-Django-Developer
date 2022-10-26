@@ -62,3 +62,7 @@ Click on the following link to see the Code in Action: [Youtube link](https://bi
 ## Get to Know the Author
 **Michael Dinder** works as a senior backend developer at Cart.com, Inc. Michael has helped to develop projects for large enterprises such as PayPal and other companies such as Corcoran Pacific Properties, and countless more either directly or indirectly. He has been programming for more than 15 years with a number of different languages and frameworks, with a focus on Python/Django for the past 5+ years.
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801073639">https://packt.link/free-ebook/9781801073639 </a> </p>
